@@ -7,7 +7,13 @@
   --accent-2: #6B8E8D;    /* subtle cool contrast */
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--bg);
@@ -70,6 +76,12 @@ nav strong {
   display: flex;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .toggle {
   font-size: 1.8rem;
   cursor: pointer;
@@ -116,10 +128,30 @@ button:hover {
 }
 
 footer {
+  margin-top: auto;
   text-align: center;
   padding: 20px;
   background: var(--primary);
   color: white;
+}
+
+main {
+  flex: 1;
+}
+
+/* Welsh button */
+.lang-btn {
+  background: var(--accent-2);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.lang-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
 }
 
 /* Desktop */
