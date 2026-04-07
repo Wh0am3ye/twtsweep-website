@@ -279,4 +279,8 @@ DESKTOP
   .nav-right {
     order: 3;
   }
+
+  .close {
+    display: none;
+  }
 }
