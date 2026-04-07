@@ -18,6 +18,14 @@ h1, h2, h3 {
   font-family: 'Noto Serif', serif;
 }
 
+h1 {
+  font-weight: 600;
+}
+
+h2, h3 {
+  font-weight: 400;
+}
+
 header {
   background: var(--bg);
   position: sticky;
