@@ -1,10 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".toggle");
   const menu = document.querySelector(".menu");
+  const closeBtn = document.querySelector(".close");
 
   if (toggle) {
     toggle.addEventListener("click", () => {
       menu.classList.toggle("active");
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove("active");
     });
   }
 

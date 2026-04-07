@@ -211,6 +211,30 @@ footer {
 }
 
 /* =========================
+MOBILE
+========================= */
+@media (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-links {
+    font-size: 18px;
+    gap: 20px;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/* =========================
 DESKTOP
 ========================= */
 @media(min-width: 768px) {
