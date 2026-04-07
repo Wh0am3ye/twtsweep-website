@@ -4,9 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (toggle) {
     toggle.addEventListener("click", () => {
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      menu.classList.toggle("active");
     });
   }
+
+  document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+  });
 
   const form = document.querySelector("form");
 
@@ -19,9 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("https://formspree.io/f/YOUR-ID", {
         method: "POST",
         body: data,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" }
       });
 
       if (response.ok) {
