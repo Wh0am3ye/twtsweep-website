@@ -99,8 +99,10 @@ map.on("load", () => {
 });
   const isWelshPage = window.location.pathname.includes('/cy/');
   const towns = [
-    { nameEn: "Bangor", nameCy: "Bangor", coords: [-4.1293, 53.2274] },
-    { nameEn: "Caernarfon", nameCy: "Caernarfon", coords: [-4.2733, 53.1397] },
+    { nameEn: "Penygroes", nameCy: "Penygroes", coords: [-4.2810, 53.0550] },
+    { nameEn: "Llanberis", nameCy: "Llanberis", coords: [-4.1290, 53.1170] },
+    { nameEn: "Menai Bridge", nameCy: "Porthaethwy", coords: [-4.1650, 53.2270] },
+    { nameEn: "Bethesda", nameCy: "Bethesda", coords: [-4.0580, 53.1800] },
     { nameEn: "Llandudno", nameCy: "Llandudno", coords: [-3.8277, 53.3240] },
     { nameEn: "Holyhead", nameCy: "Caergybi", coords: [-4.6330, 53.3060] },
     { nameEn: "Pwllheli", nameCy: "Pwllheli", coords: [-4.4140, 52.8890] }
@@ -108,22 +110,32 @@ map.on("load", () => {
 
   towns.forEach(town => {
     const label = isWelshPage ? town.nameCy : town.nameEn;
-
     const el = document.createElement("div");
-    el.className = "town-marker";
-
-    el.innerHTML = `
-      <div class="town-label">${label}</div>
-      <div class="town-dot"></div>
-    `;
+      el.className = "town-dot-only";
 
     new mapboxgl.Marker({
       element: el,
-      anchor: "bottom"
+      anchor: "center"
     })
       .setLngLat(town.coords)
       .addTo(map);
 
   });
+  towns.forEach(town => {
+    const langLabel = isWelshPage ? town.nameCy : town.nameEn;
+    const label = document.createElement("div");
+    label.className = "town-label";
+    label.textContent = langLabel;
+
+    new mapboxgl.Marker({
+      element: label,
+      anchor: "left"
+    })
+      .setLngLat(town.coords)
+      .setOffset([15, 0]) // pushes label right of dot
+      .addTo(map);
+
+  });
+
 
 });
