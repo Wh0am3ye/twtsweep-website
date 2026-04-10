@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-mapboxgl.accessToken = "pk.eyJ1Ijoid2gwYW0zeWUiLCJhIjoiY21uc3Nic25pMGZveDJycXk2bnNraWxxNSJ9.RZJchoF2r_VPERtxIVhqiw";
+mapboxgl.accessToken = window.MAPBOX_TOKEN;
 
 const map = new mapboxgl.Map({
   container: "map",
