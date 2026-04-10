@@ -138,4 +138,106 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  function initCarousel() {
+  const slides = document.querySelectorAll(".review-slide");
+
+  slides.forEach(s => s.classList.remove("active"));
+  slides[0].classList.add("active");
+}
+initCarousel();
+  const slides = document.querySelectorAll(".review-slide");
+  const dotsContainer = document.querySelector(".carousel-dots");
+
+  let current = 0;
+  let startX = 0;
+  let endX = 0;
+
+  // -------------------
+  // CREATE DOTS
+  // -------------------
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("carousel-dot");
+    if (i === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => {
+      goToSlide(i);
+      resetAuto();
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".carousel-dot");
+
+  // -------------------
+  // SHOW SLIDE
+  // -------------------
+  function goToSlide(index) {
+    slides.forEach(s => s.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    current = index;
+  }
+  
+
+  // -------------------
+  // NEXT / PREV
+  // -------------------
+  function nextSlide() {
+    let next = (current + 1) % slides.length;
+    goToSlide(next);
+  }
+
+  function prevSlide() {
+    let prev = (current - 1 + slides.length) % slides.length;
+    goToSlide(prev);
+  }
+
+  // -------------------
+  // AUTO ROTATE
+  // -------------------
+  let interval = setInterval(nextSlide, 6000);
+
+  function resetAuto() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 6000);
+  }
+
+  // -------------------
+  // SWIPE SUPPORT (MOBILE)
+  // -------------------
+  const container = document.querySelector(".reviews-carousel");
+
+  container.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  container.addEventListener("touchend", e => {
+    endX = e.changedTouches[0].clientX;
+
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextSlide();
+      else prevSlide();
+      resetAuto();
+    }
+  });
+
+  document.querySelectorAll(".stars").forEach(el => {
+  const rating = parseInt(el.dataset.rating, 10) || 5;
+
+  for (let i = 0; i < rating; i++) {
+    const star = document.createElement("i");
+    star.className = "fas fa-star";
+    el.appendChild(star);
+  }
+});
+
+
 });
