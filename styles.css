@@ -50,6 +50,10 @@ a {
   color: inherit;
 }
 
+li {
+  margin-bottom: 20px;
+}
+
 /* =========================
 HEADER / NAV
 ========================= */
@@ -80,7 +84,7 @@ nav strong {
 }
 
 .logo {
-  height: 80px;
+  height: 100px;
 }
 
 /* =========================
