@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="alternate" hreflang="en" href="areas.html" />
@@ -19,21 +21,31 @@
   <h1>Areas We Cover</h1>
 
   <div class="card">
-    <p>We provide chimney sweeping across North Wales including:</p>
+     <p>
+          We proudly serve customers across Gwynedd, Conwy and Anglesey,
+          including:
+        </p>
     <ul>
       <li>Llandudno</li>
       <li>Bangor</li>
       <li>Conwy</li>
       <li>Colwyn Bay</li>
-      <li>Anglesey</li>
+      <li>Holyhead</li>
       <li>Rhyl</li>
     </ul>
+    <p>and the surrounding areas.</p>
   </div>
 
-  <div class="card">
-    <p>We also cover surrounding rural areas and villages.</p>
-  </div>
-</section>
+    <section class="service-area">
+        <div id="map"></div>
+    </section>
+
+<!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </section>
 </main>
 
 

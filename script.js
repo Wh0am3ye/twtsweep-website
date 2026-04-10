@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Menu toggle button for mobile / small screens
   const toggle = document.querySelector(".toggle");
   const menu = document.querySelector(".menu");
   const closeBtn = document.querySelector(".close");
@@ -15,12 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Close the navigation menu when a menu link is clicked
   document.querySelectorAll(".menu a").forEach(link => {
     link.addEventListener("click", () => {
       menu.classList.remove("active");
     });
   });
 
+  // Contact form submission via Formspree
   const form = document.querySelector("form");
 
   if (form) {
@@ -43,4 +46,84 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+mapboxgl.accessToken = "pk.eyJ1Ijoid2gwYW0zeWUiLCJhIjoiY21uc3Nic25pMGZveDJycXk2bnNraWxxNSJ9.RZJchoF2r_VPERtxIVhqiw";
+
+const map = new mapboxgl.Map({
+  container: "map",
+  style: "mapbox://styles/wh0am3ye/cmnst0r6j002101qw838zg4xj",
+  center: [-4.2, 53.15],
+  zoom: 8.2
+});
+
+map.on("load", () => {
+
+  map.addSource("service-area", {
+    type: "geojson",
+    data: "/maps/service-areas.geojson"
+  });
+
+    map.addLayer({
+    id: "service-area-fill",
+    type: "fill",
+    source: "service-area",
+    paint: {
+      "fill-color": "#C6A27E",
+      "fill-opacity": 0.25
+    }
+  });
+
+    map.addLayer({
+    id: "service-area-line",
+    type: "line",
+    source: "service-area",
+    paint: {
+      "line-color": "#C6A27E",
+      "line-width": 2
+    }
+  });
+
+    fetch("/maps/service-areas.geojson")
+    .then(res => res.json())
+    .then(data => {
+      const bounds = new mapboxgl.LngLatBounds();
+
+      data.features.forEach(feature => {
+        const coords = feature.geometry.coordinates[0];
+        coords.forEach(coord => bounds.extend(coord));
+      });
+
+      map.fitBounds(bounds, { padding: 40 });
+    });
+
+});
+  const isWelshPage = window.location.pathname.includes('/cy/');
+  const towns = [
+    { nameEn: "Bangor", nameCy: "Bangor", coords: [-4.1293, 53.2274] },
+    { nameEn: "Caernarfon", nameCy: "Caernarfon", coords: [-4.2733, 53.1397] },
+    { nameEn: "Llandudno", nameCy: "Llandudno", coords: [-3.8277, 53.3240] },
+    { nameEn: "Holyhead", nameCy: "Caergybi", coords: [-4.6330, 53.3060] },
+    { nameEn: "Pwllheli", nameCy: "Pwllheli", coords: [-4.4140, 52.8890] }
+  ];
+
+  towns.forEach(town => {
+    const label = isWelshPage ? town.nameCy : town.nameEn;
+
+    const el = document.createElement("div");
+    el.className = "town-marker";
+
+    el.innerHTML = `
+      <div class="town-label">${label}</div>
+      <div class="town-dot"></div>
+    `;
+
+    new mapboxgl.Marker({
+      element: el,
+      anchor: "bottom"
+    })
+      .setLngLat(town.coords)
+      .addTo(map);
+
+  });
+
 });

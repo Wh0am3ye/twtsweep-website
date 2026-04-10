@@ -2,7 +2,7 @@
 const headerEN = `
   <header>
     <nav>
-      <strong>TWTSweep</strong>
+      <img src="../images/logo.webp" alt="TWTSweep Logo" class="logo">
       <div class="nav-right">
         <a href="../cy/cartref.html" class="lang-btn">Cymraeg</a>
         <div class="toggle">☰</div>
@@ -23,7 +23,7 @@ const headerEN = `
 const headerCY = `
   <header>
     <nav>
-      <strong>TWTSweep</strong>
+      <img src="../images/logo.webp" alt="TWTSweep Logo" class="logo">
       <div class="nav-right">
         <a href="../en/index.html" class="lang-btn">English</a>
         <div class="toggle">☰</div>
