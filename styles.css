@@ -27,6 +27,20 @@ body {
   color: var(--primary);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+#smoke {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 main {
@@ -85,6 +99,10 @@ nav strong {
 
 .logo {
   height: 100px;
+}
+
+body.error404 .menu, body.error404 .toggle{
+  display: none !important;
 }
 
 /* =========================
@@ -158,12 +176,30 @@ HERO
   font-size: 2.2rem;
 }
 
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 5s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.delayed-fade-in {
+  opacity: 0;
+  animation: fadeIn 5s ease forwards;
+  animation-delay: 7s;
+}
+
 /* =========================
 CONTENT
 ========================= */
 .container {
   padding: 30px 20px;
-  max-width: 900px;
+  max-width: 75%;
   margin: auto;
 }
 
@@ -174,6 +210,16 @@ CONTENT
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   margin-bottom: 20px;
   border-left: 5px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
 }
 
 /* =========================
@@ -191,10 +237,7 @@ REVIEWS CAROUSEL
 
 .review-slide {
   position: absolute;
-  top: 50%;
-  left: 50%;
   max-width: 90%;
-  transform: translate(-50%, -40%);
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -207,7 +250,6 @@ REVIEWS CAROUSEL
 
 .review-slide.active {
   opacity: 1;
-  transform: translate(-50%, -50%);
   pointer-events: auto;
 }
 
@@ -311,6 +353,33 @@ button:hover {
   color: white;
 }
 
+a.button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--primary);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+a.button:hover {
+  background: var(--accent-2);
+  color: white;
+  transform: translateY(-1px);
+}
+
+a.button:active {
+  transform: translateY(0);
+}
+
+a.button:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
 /* =========================
 FOOTER
 ========================= */
@@ -330,7 +399,7 @@ footer {
 
 .social-links {
   display: flex;
-  gap: 24px;
+  gap: 12px;
 }
 
 .social-links a {
@@ -347,7 +416,7 @@ footer {
 /* =========================
 MOBILE
 ========================= */
-@media (max-width: 767px) {
+@media (max-width: 945px) {
   .footer-content {
     flex-direction: column;
     gap: 10px;
@@ -375,7 +444,7 @@ MOBILE
 /* =========================
 DESKTOP
 ========================= */
-@media(min-width: 768px) {
+@media(min-width: 945px) {
 
   .menu {
     position: static;
@@ -410,8 +479,7 @@ DESKTOP
 
   .menu {
     order: 2;
-    margin-left: auto;
-    margin-right: 20px;
+    margin: 0 20px 0 20px;
   }
 
   .nav-right {
@@ -420,5 +488,16 @@ DESKTOP
 
   .close {
     display: none;
+  }
+
+  .container.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .container.cards .card {
+    flex: 1 1 calc(50% - 20px);
+    margin-bottom: 0; /* remove vertical spacing */
   }
 }

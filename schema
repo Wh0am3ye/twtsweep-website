@@ -1,0 +1,86 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.twtsweep.co.uk/#business",
+      "name": "TWTSweep",
+      "url": "https://www.twtsweep.co.uk",
+      "telephone": "+447793101565",
+      "email": "info@twtsweep.co.uk",
+      "priceRange": "££",
+      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
+
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tyddyn Du, Gallt Y Foel",
+        "addressLocality": "Caernarfon",
+        "addressRegion": "Gwynedd",
+        "postalCode": "LL55 3EG",
+        "addressCountry": "GB"
+      },
+
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Gwynedd" },
+        { "@type": "AdministrativeArea", "name": "Conwy" },
+        { "@type": "AdministrativeArea", "name": "Anglesey" }
+      ],
+
+      "serviceType": "Chimney sweeping",
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+
+      "sameAs": [
+        "https://www.facebook.com/twtsweep",
+        "https://www.instagram.com/twtsweep"
+      ],
+
+      "memberOf": {
+        "@type": "Organization",
+        "name": "NACS",
+        "url": "https://www.nacs.org.uk"
+      }
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://www.twtsweep.co.uk/#website",
+      "url": "https://www.twtsweep.co.uk",
+      "name": "TWTSweep",
+      "publisher": {
+        "@id": "https://www.twtsweep.co.uk/#business"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.twtsweep.co.uk/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://www.twtsweep.co.uk/#webpage",
+      "url": "https://www.twtsweep.co.uk/",
+      "name": "TWTSweep Chimney Sweep Services",
+      "isPartOf": {
+        "@id": "https://www.twtsweep.co.uk/#website"
+      },
+      "about": {
+        "@id": "https://www.twtsweep.co.uk/#business"
+      }
+    }
+
+  ]
+}
+</script>

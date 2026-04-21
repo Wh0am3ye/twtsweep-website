@@ -4,18 +4,18 @@ const headerEN = `
     <nav>
       <img src="../images/logo.webp" alt="TWTSweep Logo" class="logo">
       <div class="nav-right">
-        <a href="../cy/cartref.html" class="lang-btn">Cymraeg</a>
+        <a href="#" class="lang-btn">Cymraeg</a>
         <div class="toggle">☰</div>
       </div>
       <div class="menu">
         <div class="close">×</div>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="areas.html">Areas</a>
         <a href="services.html">Services</a>
+        <a href="areas.html">Areas</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
         <a href="booking.html">Booking</a>
         <a href="contact.html">Contact</a>
-        
       </div>
     </nav>
   </header>
@@ -26,21 +26,41 @@ const headerCY = `
     <nav>
       <img src="../images/logo.webp" alt="TWTSweep Logo" class="logo">
       <div class="nav-right">
-        <a href="../en/index.html" class="lang-btn">English</a>
+        <a href="#" class="lang-btn">English</a>
         <div class="toggle">☰</div>
       </div>
       <div class="menu">
         <div class="close">×</div>
-        <a href="cartref.html">Cartref</a>
-        <a href="amdana.html">Amdana</a>
-        <a href="ardaloedd.html">Ardaloedd</a>
+        <a href="index.html">Cartref</a>
         <a href="gwasanaethau.html">Gwasanaethau</a>
+        <a href="ardaloedd.html">Ardaloedd</a>
+        <a href="amdana.html">Amdana</a>
+        <a href="cwestiynau-cyffredin.html">Cwestiynau Cyffredin</a>
         <a href="bwcio.html">Bwcio</a>
         <a href="cysylltu.html">Cysylltu</a>
       </div>
     </nav>
   </header>
 `;
+
+const langMap = {
+  "/en/index.html": "/cy/index.html",
+  "/en/services.html": "/cy/gwasanaethau.html",
+  "/en/areas.html": "/cy/ardaloedd.html",
+  "/en/faq.html": "/cy/cwestiynau-cyffredin.html",
+  "/en/about.html": "/cy/amdana.html",
+  "/en/booking.html": "/cy/bwcio.html",
+  "/en/contact.html": "/cy/cysylltu.html",
+
+  // reverse mapping
+  "/cy/index.html": "/en/index.html",
+  "/cy/gwasanaethau.html": "/en/services.html",
+  "/cy/ardaloedd.html": "/en/areas.html",
+  "/cy/cwestiynau-cyffredin.html": "/en/faq.html",
+  "/cy/amdana.html": "/en/about.html",
+  "/cy/bwcio.html": "/en/booking.html",
+  "/cy/cysylltu.html": "/en/contact.html"
+};
 
 const footer = `
   <footer>
@@ -75,6 +95,42 @@ function loadComponents() {
   }
 
   getContactDetails();
+
+  updateLangButton();
+}
+
+function updateLangButton() {
+  const langBtn = document.querySelector(".lang-btn");
+  if (!langBtn) return;
+
+  let path = window.location.pathname;
+
+  // Normalize trailing slash → index.html
+  if (path.endsWith("/")) {
+    path += "index.html";
+  }
+
+  // Remove relative weirdness (optional but safer)
+  path = path.replace(/\/+$/, "");
+
+  // Set correct link
+  if (langMap[path]) {
+    langBtn.href = langMap[path];
+  } else {
+    // fallback
+    if (path.includes("/en/")) {
+      langBtn.href = "/cy/";
+    } else {
+      langBtn.href = "/en/";
+    }
+  }
+
+  // Update button text
+  if (path.includes("/en/")) {
+    langBtn.textContent = "Cymraeg";
+  } else {
+    langBtn.textContent = "English";
+  }
 }
 
 // Load components when page is ready

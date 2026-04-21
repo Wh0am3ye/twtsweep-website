@@ -142,13 +142,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function initCarousel() {
   const slides = document.querySelectorAll(".review-slide");
 
+if (!slides.length) return;
+
   slides.forEach(s => s.classList.remove("active"));
   slides[0].classList.add("active");
 }
 initCarousel();
   const slides = document.querySelectorAll(".review-slide");
   const dotsContainer = document.querySelector(".carousel-dots");
-
+if (slides.length && dotsContainer) {
   let current = 0;
   let startX = 0;
   let endX = 0;
@@ -213,6 +215,7 @@ initCarousel();
   // -------------------
   const container = document.querySelector(".reviews-carousel");
 
+if (container) {
   container.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
   });
@@ -228,7 +231,8 @@ initCarousel();
       resetAuto();
     }
   });
-
+}
+}
   document.querySelectorAll(".stars").forEach(el => {
   const rating = parseInt(el.dataset.rating, 10) || 5;
 
@@ -239,5 +243,86 @@ initCarousel();
   }
 });
 
+// -------------------
+// SMOKE ANIMATION FOR 404 PAGE
+// -------------------
+
+const canvas = document.getElementById("smoke");
+if (canvas) {
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+class SmokeParticle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+
+    // Puff randomness
+    this.size = Math.random() * 20 + 20;
+    this.speedX = (Math.random() - 0.5) * 1.5;
+    this.speedY = Math.random() * -2 - 0.5;
+
+    this.life = 100;
+    this.opacity = 0.6;
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    this.speedX += 0.01;
+    // drift outward over time
+    this.size += 0.2;
+
+    // fade + disperse
+    this.opacity -= 0.006;
+    this.life--;
+  }
+
+  draw() {
+  const shade = 60 + Math.random() * 40; // 60–100 range
+  ctx.fillStyle = `rgba(${shade}, ${shade}, ${shade}, ${this.opacity})`;
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+  ctx.fill();
+}
+}
+
+function createPuff(x, y) {
+  for (let i = 0; i < 40; i++) {
+    particles.push(new SmokeParticle(x, y));
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.filter = "blur(8px)";
+  particles.forEach((p, i) => {
+    p.update();
+    p.draw();
+
+    if (p.opacity <= 0 || p.life <= 0) {
+      particles.splice(i, 1);
+    }
+  });
+
+  requestAnimationFrame(animate);
+}
+
+// Initial puff (center of screen)
+createPuff(canvas.width / 2, canvas.height / 2);
+
+animate();
+
+// Optional: trigger new puff on click
+window.addEventListener("click", (e) => {
+  createPuff(e.clientX, e.clientY);
+});
+}
 
 });
