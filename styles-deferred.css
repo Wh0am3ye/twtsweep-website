@@ -1,0 +1,219 @@
+/* Deferred stylesheet: non-critical rules moved here to avoid blocking LCP */
+
+/* =========================
+10. REVIEWS CAROUSEL
+========================= */
+.reviews-carousel {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #777 1px solid;
+  border-radius: var(--radius-sym);
+  padding: 20px;
+}
+
+.review-slide {
+  position: absolute;
+  max-width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.review-slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+.review-slide p {
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.review-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-meta {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.stars {
+  display: block;
+  font-size: var(--star-size);
+  font-family: Arial, sans-serif;
+  line-height: 1;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.stars::before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  color: var(--star-color);
+}
+
+.stars::after {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  color: var(--star-fill);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--rating) / 5 * 100%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+.review-source {
+  font-size: 12px;
+  color: #767676;
+}
+
+/* =========================
+11. FAQ
+========================= */
+.faq-item {
+  border-bottom: 1px solid var(--accent);
+  padding: 10px 15px;
+}
+
+.faq-question::before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath fill='%235F7170' d='M214.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 402.7 329.4 265.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 210.7 329.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.faq-item[open] .faq-question::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath fill='%235F7170' d='M342.6%20105.4C330.1%2092.9%20309.8%2092.9%20297.3%20105.4L137.3%20265.4C124.8%20277.9%20124.8%20298.2%20137.3%20310.7C149.8%20323.2%20170.1%20323.2%20182.6%20310.7L320%20173.3L457.4%20310.6C469.9%20323.1%20490.2%20323.1%20502.7%20310.6C515.2%20298.1%20515.2%20277.8%20502.7%20265.3L342.7%20105.3zM502.6%20457.4L342.6%20297.4C330.1%20284.9%20309.8%20284.9%20297.3%20297.4L137.3%20457.4C124.8%20469.9%20124.8%20490.2%20137.3%20502.7C149.8%20515.2%20170.1%20515.2%20182.6%20502.7L320%20365.3L457.4%20502.6C469.9%20515.1%20490.2%20515.1%20502.7%20502.6C515.2%20490.1%20515.2%20469.8%20502.7%20457.3z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.faq-question {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+
+.faq-item[open] {
+  background-color: white;
+}
+
+.faq-answer {
+  padding: var(--spacing);
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.faq-question:hover {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.faq-item:hover:not([open]) {
+  background-image: linear-gradient(rgb(0 0 0/3%) 0 0);
+}
+
+/* =========================
+11A. SERVICE AREA MAP 
+========================= */
+.areas {
+  padding: var(--spacing);
+  margin: 20px auto;
+}
+
+.areas-list {
+  list-style: disclosure-closed;
+  text-align: left;
+  max-width: 400px;
+}
+
+.service-area {
+  text-align: center;
+}
+
+#map {
+  min-height: 400px;
+  height: 50vh;
+  border-radius: var(--radius-sym);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.town-dot-only {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+}
+
+.town-label {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* =========================
+12. 404 PAGE / ANIMATIONS
+========================= */
+.fade-in .delayed-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.delayed-fade-in {
+  animation-delay: 0.6s;
+}
+
+#smoke {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}

@@ -8,7 +8,13 @@ export function initMap() {
     container: "map",
     style: "mapbox://styles/wh0am3ye/cmnst0r6j002101qw838zg4xj",
     center: [-4.2, 53.15],
-    zoom: 8.2
+    zoom: 8.2,
+    performanceMetricsCollection: false,
+    collectResourceTiming: false,
+    scrollZoom: false,        // ← add this
+    doubleClickZoom: false,   // ← add this
+    touchZoomRotate: false,   // ← add this
+    boxZoom: false            // ← add this
   });
 
   map.on("load", () => {
