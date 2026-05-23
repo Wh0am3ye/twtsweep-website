@@ -11,10 +11,10 @@ export function initMap() {
     zoom: 8.2,
     performanceMetricsCollection: false,
     collectResourceTiming: false,
-    scrollZoom: false,        // ← add this
-    doubleClickZoom: false,   // ← add this
-    touchZoomRotate: false,   // ← add this
-    boxZoom: false            // ← add this
+    scrollZoom: false,
+    doubleClickZoom: false,
+    touchZoomRotate: false,
+    boxZoom: false
   });
 
   map.on("load", () => {
@@ -28,7 +28,7 @@ export function initMap() {
         type: "fill",
         source: "service-area",
         paint: {
-          "fill-color": "#C6A27E",
+          "fill-color": "#f28123",
           "fill-opacity": 0.25
         }
       });
@@ -38,8 +38,8 @@ export function initMap() {
         type: "line",
         source: "service-area",
         paint: {
-          "line-color": "#C6A27E",
-          "line-width": 2
+          "line-color": "#f28123",
+          "line-width": 3
         }
       });
 
@@ -59,13 +59,17 @@ export function initMap() {
 
       const isWelshPage = window.location.pathname.includes("/cy/");
       const towns = [
-        { nameEn: "Penygroes", nameCy: "Penygroes", coords: [-4.2810, 53.0550] },
-        { nameEn: "Llanberis", nameCy: "Llanberis", coords: [-4.1290, 53.1170] },
-        { nameEn: "Menai Bridge", nameCy: "Porthaethwy", coords: [-4.1650, 53.2270] },
-        { nameEn: "Bethesda", nameCy: "Bethesda", coords: [-4.0580, 53.1800] },
-        { nameEn: "Llandudno", nameCy: "Llandudno", coords: [-3.8277, 53.3240] },
-        { nameEn: "Holyhead", nameCy: "Caergybi", coords: [-4.6330, 53.3060] },
-        { nameEn: "Pwllheli", nameCy: "Pwllheli", coords: [-4.4140, 52.8890] }
+        { nameEn: "Penygroes", nameCy: "Penygroes", coords: [-4.2836, 53.0545] },
+        { nameEn: "Menai Bridge", nameCy: "Porthaethwy", coords: [-4.1651, 53.2223] },
+        { nameEn: "Llandudno", nameCy: "Llandudno", coords: [-3.8272, 53.3238] },
+        { nameEn: "Holyhead", nameCy: "Caergybi", coords: [-4.6323, 53.3092] },
+        { nameEn: "Pwllheli", nameCy: "Pwllheli", coords: [-4.4174, 52.8886] },
+        { nameEn: "Harlech", nameCy: "Harlech", coords: [-4.1024, 52.8567] },
+        { nameEn: "Abergele", nameCy: "Abergele", coords: [-3.5822, 53.2844] },
+        { nameEn: "Betws-y-Coed", nameCy: "Betws-y-coed", coords: [-3.8009, 53.0911] },
+        { nameEn: "Aberdaron", nameCy: "Aberdaron", coords: [-4.7101, 52.8046] },
+        { nameEn: "Amlwch", nameCy: "Amlwch", coords: [-4.3454, 53.4107] },
+        { nameEn: "Cricieth", nameCy: "Cricieth", coords: [-4.2332, 52.9188] }
       ];
 
       towns.forEach(town => {

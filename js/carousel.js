@@ -8,28 +8,51 @@ export function initCarousel() {
   let interval;
 
   slides[0].classList.add("active");
+  slides[0].setAttribute("aria-hidden", "false");
 
   slides.forEach((_, i) => {
-    const dot = document.createElement("div");
-    dot.classList.add("carousel-dot");
-    if (i === 0) dot.classList.add("active");
+    const button = document.createElement("button");
+    button.classList.add("carousel-dot");
+    button.setAttribute("aria-label", `Review ${i + 1} of ${slides.length}`);
+    button.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+    if (i === 0) button.classList.add("active");
 
-    dot.addEventListener("click", () => {
+    button.addEventListener("click", () => {
       goToSlide(i);
       resetAuto();
     });
 
-    dotsContainer.appendChild(dot);
+    dotsContainer.appendChild(button);
   });
 
   const dots = document.querySelectorAll(".carousel-dot");
 
   function goToSlide(index) {
-    slides.forEach(s => s.classList.remove("active"));
-    dots.forEach(d => d.classList.remove("active"));
+    slides.forEach((s, i) => {
+      s.classList.remove("active");
+      s.setAttribute("aria-hidden", "true");
+      // Hide all links in inactive slides
+      const links = s.querySelectorAll("a");
+      links.forEach(link => {
+        link.setAttribute("aria-hidden", "true");
+        link.setAttribute("tabindex", "-1");
+      });
+    });
+    dots.forEach((d, i) => {
+      d.classList.remove("active");
+      d.setAttribute("aria-pressed", "false");
+    });
 
     slides[index].classList.add("active");
+    slides[index].setAttribute("aria-hidden", "false");
+    // Show all links in active slide
+    const activeLinks = slides[index].querySelectorAll("a");
+    activeLinks.forEach(link => {
+      link.setAttribute("aria-hidden", "false");
+      link.removeAttribute("tabindex");
+    });
     dots[index].classList.add("active");
+    dots[index].setAttribute("aria-pressed", "true");
     current = index;
   }
 
@@ -47,6 +70,27 @@ export function initCarousel() {
   }
 
   interval = setInterval(nextSlide, 6000);
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    const focusedButton = document.activeElement;
+    
+    if (focusedButton && focusedButton.classList.contains("carousel-dot")) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        prevSlide();
+        resetAuto();
+        focusedButton.blur();
+        dots[(current - 1 + slides.length) % slides.length].focus();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        nextSlide();
+        resetAuto();
+        focusedButton.blur();
+        dots[(current + 1) % slides.length].focus();
+      }
+    }
+  });
 
   const container = document.querySelector(".reviews-carousel");
 

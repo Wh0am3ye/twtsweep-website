@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: #777 1px solid;
+  border: var(--grey) 3px solid;
   border-radius: var(--radius-sym);
   padding: 20px;
 }
@@ -88,6 +88,9 @@
   border-radius: 50%;
   background: var(--accent-2);
   cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-dot.active {
@@ -97,14 +100,15 @@
 
 .review-source {
   font-size: 12px;
-  color: #767676;
+  color: var(--grey);
+  text-decoration: underline;
 }
 
 /* =========================
 11. FAQ
 ========================= */
 .faq-item {
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 3px solid var(--accent-3);
   padding: 10px 15px;
 }
 

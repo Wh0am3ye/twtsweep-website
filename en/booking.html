@@ -65,8 +65,8 @@
     <h2>Schedule your appointment online with TWTSweep</h2>
     <p>Use the booking widget below to select your preferred date and time.</br>No upfront payment is required - you only pay after the service.</p>
   </section>
-  <section class="container">
-      <iframe src="https://twtsweep.setmore.com/book" width="100%" height="600" style="border: none; border-radius: 12px;"></iframe>
+  <section id="setmore-booking" class="container">
+      <iframe id="booking-frame" src="https://twtsweep.setmore.com/book" width="100%" height="600" style="border: none; border-radius: 12px;"></iframe>
   </section>
 </main>
 
@@ -103,6 +103,34 @@
     <p>© TWTSweep</p>
   </div>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Grab the parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceId = urlParams.get('service');
+    
+    console.log("Detected Service Parameter:", serviceId);
+
+    // 2. Find the iframe
+    const iframe = document.getElementById('booking-frame');
+    
+    if (!iframe) {
+      console.error("Error: Could not find an iframe with id='booking-frame'");
+      return;
+    }
+
+    // 3. Update the source if the parameter exists
+    if (serviceId) {
+      // NOTE: Adjust this string format to match your exact Setmore EasyShare URL pattern
+      const newSource = `https://twtsweep.setmore.com/services/${serviceId}`;
+      
+      console.log("Updating iframe source to:", newSource);
+      iframe.src = newSource;
+    } else {
+      console.log("No service parameter found in URL. Loading default booking page.");
+    }
+  });
+</script>
 
 </body>
 </html>
