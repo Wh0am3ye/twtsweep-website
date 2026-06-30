@@ -66,7 +66,7 @@ function getContactDetails() {
   const emailUser = "info";
   const emailDomain = "twtsweep.co.uk";
   const email = `${emailUser}@${emailDomain}`;
-  const phone = "07793101565";
+  const phone = "07793 101 565";
   const formattedPhone = formatPhone(phone);
   const whatsappNumber = "44" + phone.substring(1);
 
