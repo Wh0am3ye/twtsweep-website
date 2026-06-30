@@ -1,2 +1,9 @@
 # Keep the site config file available for GitHub-based deployments
 !config.js
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
