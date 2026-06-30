@@ -269,6 +269,22 @@ nav ul,
 }
 
 @media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .intro > .text-container {
+    max-width: 100%;
+  }
+
+  #nacs-logo {
+    margin: 0;
+    width: min(220px, 100%);
+    height: auto;
+  }
+
   .about-intro {
     flex-direction: column;
     align-items: center;
