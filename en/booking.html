@@ -13,9 +13,7 @@
   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Inter-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="preload" href="/styles-deferred.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles-deferred.css"></noscript>
+  <link rel="stylesheet" href="../combined-styles.css">
 
   <link rel="canonical" href="https://www.twtsweep.com/en/booking.html" />
   <link rel="alternate" hreflang="en" href="https://www.twtsweep.com/en/booking.html" />
@@ -59,13 +57,13 @@
   </nav>
 </header>
 
-<main>  
-  <section class="hero booking-hero">
+<main class="vert-main booking-vert-main">  
+  <section class="hero vert-hero booking-vert-hero">
     <h1>Book Your Chimney Sweep</h1>
     <h2>Schedule your appointment online with TWTSweep</h2>
-    <p>Use the booking widget below to select your preferred date and time.</br>No upfront payment is required - you only pay after the service.</p>
+    <p>Use the booking widget on this page to select your preferred date and time.</br>No upfront payment is required - you only pay after the service.</p>
   </section>
-  <section id="setmore-booking" class="container">
+  <section id="setmore-booking" class="container vert-container">
       <iframe id="booking-frame" src="https://twtsweep.setmore.com/book" width="100%" height="600" style="border: none; border-radius: 12px;"></iframe>
   </section>
 </main>

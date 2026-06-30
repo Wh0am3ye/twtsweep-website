@@ -1,0 +1,5 @@
+/ /cy/ 302 Language=cy
+/ /en/ 302
+/en/* /en/404.html 404
+/cy/* /cy/404.html 404
+/* /404.html 404

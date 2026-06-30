@@ -46,6 +46,11 @@
   --accent-2: #335f84;
   --accent-3: #3d6e42;
 
+  --focus-ring:
+    0 0 0 2px var(--bg),
+    0 0 0 5px var(--primary),
+    0 0 0 7px var(--accent);
+
   --radius-asym: 12px 0 12px 0 ;
   --radius-sym: 12px;
   --shadow: 0 4px 10px rgba(0,0,0,0.25);
@@ -70,6 +75,11 @@
   padding: 0;
 }
 
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring)   ;
+}
+
 html, body {
   height: 100%;
 }
@@ -88,17 +98,17 @@ main {
   flex: 1;
 }
 
-.contact-main {
+.vert-main {
   display: flex;
   flex-direction: column;
 }
 
-.contact-main p {
+.vert-main p {
   max-width: 80%;
   margin: 0 auto 15px auto;
 }
 
-.contact-hero, .contact-container {
+.vert-hero, .vert-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,18 +117,49 @@ main {
 }
 
 @media (min-width: 768px) {
-  .contact-main {
+  .vert-main {
     flex-direction: row;
     align-items: stretch;
   }
 
-  .contact-hero {
+  .vert-hero {
     align-self: stretch;
   }
 
-  .contact-hero, .contact-container {
+  .vert-hero, .vert-container {
     flex: 1;
   }
+
+  .booking-vert-main {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .booking-vert-hero {
+    align-self: stretch;
+    flex: unset;
+  }
+ 
+  .booking-vert-container {
+    flex: unset;
+  }
+
+}
+
+@media (min-width: 1250px) {
+  .booking-vert-main {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .booking-vert-hero {
+    align-self: stretch;
+  }
+
+  .booking-vert-hero, .booking-vert-container {
+    flex: 1;
+  }
+
 }
 
 img:not(.logo) {
@@ -149,13 +190,21 @@ a {
   text-decoration: none;
 }
 
-.skip {
+.skip-link {
   position: absolute;
   left: -9999px;
   top: auto;
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.text-link {
+  text-decoration: underline;
+}
+
+.text-link:hover {
+  color: var(--accent);
 }
 
 /* =========================
@@ -254,7 +303,8 @@ nav ul,
 
 .about-intro:first-of-type .text-container {
   text-align: right;
-  max-width: 600px;
+  max-width: 500px;
+  margin: 0;
 }
 
 .about-intro:first-of-type {
@@ -481,6 +531,7 @@ use {
 
 #setmore-booking {
   scroll-margin-top: 15vh;
+  width: 100%;
 }
 
 /* =========================
@@ -504,6 +555,12 @@ use {
 
 .book-btn > .btn, .btn-2 {
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.18);
+}
+
+.book-btn > .btn:focus-visible, .btn-2:focus-visible {
+  box-shadow:
+    inset 0 -3px 0 rgba(0, 0, 0, 0.18),
+    var(--focus-ring);
 }
 
 .btn, .btn-2{
@@ -678,6 +735,7 @@ footer {
   justify-content: center;
   border: var(--grey) 3px solid;
   border-radius: var(--radius-sym);
+  box-shadow: var(--shadow);
   padding: 20px;
 }
 

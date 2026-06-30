@@ -13,13 +13,7 @@
   <link rel="preload" href="/fonts/Inter-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" fetchpriority="high" href="/images/LlynPadarnAlt.webp" as="image" type="image/webp">
 
-
   <link rel="stylesheet" href="../combined-styles.css">
-  <!-- Main CSS (keep this simple and blocking) 
-  <link rel="stylesheet" href="../styles.css"> 
-  <!-- Deferred non-critical CSS: preload then apply 
-  <link rel="preload" href="/styles-deferred.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles-deferred.css"></noscript>-->
 
   <!-- Hreflang -->
   <link rel="canonical" href="https://www.twtsweep.com/cy/" />
@@ -33,7 +27,7 @@
   </head>
   <body>
   <header>
-    <a href="#main" class="skip">Skip to main content</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
   <nav>
     <a href="index.html">
       <img src="../images/logo200px.webp" alt="TWTSweep Logo" class="logo" width="80px" height="80px">
@@ -46,7 +40,7 @@
         </svg>
       </button>
     </div>
-    <ul class="menu" aria-hidden="true">
+    <ul class="menu" aria-hidden="true" tabindex="-1">
       <li>
         <button class="toggle close" aria-label="Close menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true">
@@ -81,7 +75,9 @@
       <p>Across North Wales, chimneys are used heavily during the colder months. Over time, soot and tar build up inside the flue - raising the risk of chimney fires and reducing efficiency.</p>
       <p>Regular sweeping from a NACS registered sweep keeps your home safe, your fire burning properly, and your chimney in top condition.</p>
     </div>
-    <img src="../images/NACS Member Logo Transparent.webp" alt="NACS Member Logo" id="nacs-logo">
+    <a href="https://www.nacs.org.uk/" target="_blank" aria-label="NACS Website (opens in new window)" aria-hidden="false">
+      <img src="../images/NACS Member Logo Transparent.webp" alt="NACS Member Logo" id="nacs-logo">
+    </a>
   </section>
   <section class="container">
     <div class="card">

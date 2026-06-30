@@ -1,1 +1,2 @@
-config.js
+# Keep the site config file available for GitHub-based deployments
+!config.js
