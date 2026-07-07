@@ -6,6 +6,7 @@ export function initCarousel() {
 
   let current = 0;
   let interval;
+  let isPaused = false;
 
   slides[0].classList.add("active");
   slides[0].setAttribute("aria-hidden", "false");
@@ -64,12 +65,36 @@ export function initCarousel() {
     goToSlide((current - 1 + slides.length) % slides.length);
   }
 
-  function resetAuto() {
-    clearInterval(interval);
-    interval = setInterval(nextSlide, 6000);
+  function startAuto() {
+    if (isPaused || interval) return;
+    interval = window.setInterval(nextSlide, 6000);
   }
 
-  interval = setInterval(nextSlide, 6000);
+  function stopAuto() {
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
+  }
+
+  function pauseAuto() {
+    isPaused = true;
+    stopAuto();
+  }
+
+  function resumeAuto() {
+    isPaused = false;
+    startAuto();
+  }
+
+  function resetAuto() {
+    stopAuto();
+    if (!isPaused) {
+      startAuto();
+    }
+  }
+
+  startAuto();
 
   // Keyboard navigation
   document.addEventListener("keydown", (e) => {
@@ -96,6 +121,14 @@ export function initCarousel() {
 
   if (container) {
     let startX = 0;
+
+    container.addEventListener("mouseenter", pauseAuto);
+    container.addEventListener("mouseleave", resumeAuto);
+    container.addEventListener("focusin", pauseAuto);
+    container.addEventListener("focusout", e => {
+      if (e.relatedTarget && container.contains(e.relatedTarget)) return;
+      resumeAuto();
+    });
 
     container.addEventListener("touchstart", e => {
       startX = e.touches[0].clientX;
