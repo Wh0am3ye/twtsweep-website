@@ -59,18 +59,35 @@ export function initMap() {
 
       const isWelshPage = window.location.pathname.includes("/cy/");
       const towns = [
-        { nameEn: "Penygroes", nameCy: "Penygroes", coords: [-4.2836, 53.0545] },
-        { nameEn: "Menai Bridge", nameCy: "Porthaethwy", coords: [-4.1651, 53.2223] },
-        { nameEn: "Llandudno", nameCy: "Llandudno", coords: [-3.8272, 53.3238] },
-        { nameEn: "Holyhead", nameCy: "Caergybi", coords: [-4.6323, 53.3092] },
-        { nameEn: "Pwllheli", nameCy: "Pwllheli", coords: [-4.4174, 52.8886] },
-        { nameEn: "Harlech", nameCy: "Harlech", coords: [-4.1024, 52.8567] },
-        { nameEn: "Abergele", nameCy: "Abergele", coords: [-3.5822, 53.2844] },
-        { nameEn: "Betws-y-Coed", nameCy: "Betws-y-coed", coords: [-3.8009, 53.0911] },
         { nameEn: "Aberdaron", nameCy: "Aberdaron", coords: [-4.7101, 52.8046] },
+        { nameEn: "Abergele", nameCy: "Abergele", coords: [-3.5822, 53.2844] },
         { nameEn: "Amlwch", nameCy: "Amlwch", coords: [-4.3454, 53.4107] },
-        { nameEn: "Cricieth", nameCy: "Cricieth", coords: [-4.2332, 52.9188] }
+        { nameEn: "Betws-y-Coed", nameCy: "Betws-y-coed", coords: [-3.8009, 53.0911] },
+        { nameEn: "Cricieth", nameCy: "Cricieth", coords: [-4.2332, 52.9188] },
+        { nameEn: "Harlech", nameCy: "Harlech", coords: [-4.1024, 52.8567] },
+        { nameEn: "Holyhead", nameCy: "Caergybi", coords: [-4.6323, 53.3092] },
+        { nameEn: "Llandudno", nameCy: "Llandudno", coords: [-3.8272, 53.3238] },
+        { nameEn: "Menai Bridge", nameCy: "Porthaethwy", coords: [-4.1651, 53.2223] },
+        { nameEn: "Penygroes", nameCy: "Penygroes", coords: [-4.2836, 53.0545] },
+        { nameEn: "Pwllheli", nameCy: "Pwllheli", coords: [-4.4174, 52.8886] }
       ];
+
+      const townListContainer = document.getElementById("town-list");
+      if (townListContainer) {
+        const listTitle = document.createElement("h2");
+        listTitle.textContent = isWelshPage ? "Trefi a phentrefi" : "Towns and villages";
+
+        const townList = document.createElement("ul");
+        townList.className = "town-list__items";
+
+        towns.forEach(town => {
+          const item = document.createElement("li");
+          item.textContent = isWelshPage ? town.nameCy || town.nameEn : town.nameEn;
+          townList.appendChild(item);
+        });
+
+        townListContainer.replaceChildren(listTitle, townList);
+      }
 
       towns.forEach(town => {
         const label = isWelshPage ? town.nameCy || town.nameEn : town.nameEn;
