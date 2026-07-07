@@ -262,6 +262,14 @@ nav ul,
   color: inherit; /* works with currentColor in SVG */
 }
 
+.lang-btn svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 5px;
+  flex-shrink: 0;
+  color: inherit; /* works with currentColor in SVG */
+}
+
 /* =========================
 5. LAYOUT
 ========================= */
