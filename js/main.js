@@ -5,6 +5,9 @@ function initMenu() {
 
   if (!menu) return;
 
+  syncMenuState();
+  window.addEventListener("resize", syncMenuState);
+
   // All focusable elements inside the menu
   function getFocusable() {
     return [...menu.querySelectorAll(
@@ -12,9 +15,27 @@ function initMenu() {
     )];
   }
 
+  function syncMenuState() {
+    const isMobile = window.matchMedia("(max-width: 989px)").matches;
+
+    if (!isMobile) {
+      menu.removeAttribute("aria-hidden");
+      menu.removeAttribute("tabindex");
+      return;
+    }
+
+    if (menu.classList.contains("active")) {
+      menu.setAttribute("aria-hidden", "false");
+      menu.removeAttribute("tabindex");
+    } else {
+      menu.setAttribute("aria-hidden", "true");
+      menu.setAttribute("tabindex", "-1");
+    }
+  }
+
   function openMenu() {
     menu.classList.add("active");
-    menu.setAttribute("aria-hidden", "false");
+    syncMenuState();
     toggle.setAttribute("aria-expanded", "true");
 
     // Prevent screen readers reaching background content
@@ -29,7 +50,7 @@ function initMenu() {
 
   function closeMenu() {
     menu.classList.remove("active");
-    menu.setAttribute("aria-hidden", "true");
+    syncMenuState();
     toggle.setAttribute("aria-expanded", "false");
 
     // Restore background content

@@ -5,6 +5,24 @@ export function initMenu() {
 
   if (!menu) return;
 
+  function syncMenuState() {
+    const isMobile = window.matchMedia("(max-width: 989px)").matches;
+
+    if (!isMobile) {
+      menu.removeAttribute("aria-hidden");
+      menu.removeAttribute("tabindex");
+      return;
+    }
+
+    if (menu.classList.contains("active")) {
+      menu.setAttribute("aria-hidden", "false");
+      menu.removeAttribute("tabindex");
+    } else {
+      menu.setAttribute("aria-hidden", "true");
+      menu.setAttribute("tabindex", "-1");
+    }
+  }
+
   // All focusable elements inside the menu
   function getFocusable() {
     return [...menu.querySelectorAll(
@@ -14,7 +32,7 @@ export function initMenu() {
 
   function openMenu() {
     menu.classList.add("active");
-    menu.setAttribute("aria-hidden", "false");
+    syncMenuState();
     toggle.setAttribute("aria-expanded", "true");
 
     // Prevent screen readers reaching background content
@@ -29,7 +47,7 @@ export function initMenu() {
 
   function closeMenu() {
     menu.classList.remove("active");
-    menu.setAttribute("aria-hidden", "true");
+    syncMenuState();
     toggle.setAttribute("aria-expanded", "false");
 
     // Restore background content
@@ -40,6 +58,9 @@ export function initMenu() {
     // Return focus to the hamburger button
     toggle.focus();
   }
+
+  syncMenuState();
+  window.addEventListener("resize", syncMenuState);
 
   // Focus trap on Tab / Shift+Tab
   menu.addEventListener("keydown", e => {
