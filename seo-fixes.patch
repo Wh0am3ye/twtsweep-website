@@ -1,0 +1,1658 @@
+diff --git a/404.html b/404.html
+index 7c18946..ab19aab 100644
+--- a/404.html
++++ b/404.html
+@@ -5,6 +5,7 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+   <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="robots" content="noindex, nofollow">
+ 
+   <title>404 - Page Not Found</title>
+ 
+@@ -15,10 +16,6 @@
+ 
+   <link rel="stylesheet" href="/combined-styles.css">
+ 
+-  <link rel="canonical" href="https://www.twtsweep.co.uk/404.html" />
+-  <link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/404.html" />
+-  <link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/404.html" />
+-  <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/404.html" />
+ 
+   <script src="components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
+diff --git a/cy/404.html b/cy/404.html
+index 956bf38..a7cb196 100644
+--- a/cy/404.html
++++ b/cy/404.html
+@@ -5,6 +5,7 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+   <meta name="description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="robots" content="noindex, nofollow">
+ 
+   <title>404 - Tudalen Heb Ganfod</title>
+ 
+@@ -15,10 +16,6 @@
+ 
+   <link rel="stylesheet" href="/combined-styles.css">
+ 
+-  <link rel="canonical" href="https://www.twtsweep.co.uk/cy/404.html" />
+-  <link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/404.html" />
+-  <link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/404.html" />
+-  <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/404.html" />
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
+ </head>
+diff --git a/cy/amdana.html b/cy/amdana.html
+index 7b414b4..c25c1a8 100644
+--- a/cy/amdana.html
++++ b/cy/amdana.html
+@@ -8,6 +8,19 @@
+ 
+   <title>Amdana - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="cy_GB">
++  <meta property="og:title" content="Amdana - TWTSweep">
++  <meta property="og:description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/cy/amdana.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Amdana - TWTSweep">
++  <meta name="twitter:description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -21,6 +34,70 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/about.html" />
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/cy/amdana.html",
++      "url": "https://www.twtsweep.co.uk/cy/amdana.html",
++      "name": "Amdana - TWTSweep",
++      "description": "Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/cy/ardaloedd.html b/cy/ardaloedd.html
+index cb0586b..48e82ab 100644
+--- a/cy/ardaloedd.html
++++ b/cy/ardaloedd.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="description" content="Mae TWTSweep yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Edrychwch os ydan ni'n dod i'ch ardal chi yng Ngogledd Cymru.">
+ 
+   <title>Ardaloedd - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="cy_GB">
++  <meta property="og:title" content="Ardaloedd - TWTSweep">
++  <meta property="og:description" content="Mae TWTSweep yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Edrychwch os ydan ni'n dod i'ch ardal chi yng Ngogledd Cymru.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/cy/ardaloedd.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Ardaloedd - TWTSweep">
++  <meta name="twitter:description" content="Mae TWTSweep yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Edrychwch os ydan ni'n dod i'ch ardal chi yng Ngogledd Cymru.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -25,6 +38,70 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/areas.html" />
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/cy/ardaloedd.html",
++      "url": "https://www.twtsweep.co.uk/cy/ardaloedd.html",
++      "name": "Ardaloedd - TWTSweep",
++      "description": "Mae TWTSweep yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Edrychwch os ydan ni'n dod i'ch ardal chi yng Ngogledd Cymru.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/cy/bwcio.html b/cy/bwcio.html
+index 995b722..17f0b7d 100644
+--- a/cy/bwcio.html
++++ b/cy/bwcio.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="description" content="Bwciwch eich apwyntiad sgubo simdde ar-lein mewn dim o dro. Dim angen talu ymlaen llaw.">
+ 
+   <title>Bwcio - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="cy_GB">
++  <meta property="og:title" content="Bwcio - TWTSweep">
++  <meta property="og:description" content="Bwciwch eich apwyntiad sgubo simdde ar-lein mewn dim o dro. Dim angen talu ymlaen llaw.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/cy/bwcio.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Bwcio - TWTSweep">
++  <meta name="twitter:description" content="Bwciwch eich apwyntiad sgubo simdde ar-lein mewn dim o dro. Dim angen talu ymlaen llaw.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -21,6 +34,70 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/booking.html" />
+ <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/cy/bwcio.html",
++      "url": "https://www.twtsweep.co.uk/cy/bwcio.html",
++      "name": "Bwcio - TWTSweep",
++      "description": "Bwciwch eich apwyntiad sgubo simdde ar-lein mewn dim o dro. Dim angen talu ymlaen llaw.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/cy/cwestiynau-cyffredin.html b/cy/cwestiynau-cyffredin.html
+index af4767d..6572749 100644
+--- a/cy/cwestiynau-cyffredin.html
++++ b/cy/cwestiynau-cyffredin.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="description" content="Atebion i gwestiynau cyffredin am lanhau simneiau, bwcio, a be sy'n digwydd yn ystod ymweliad TWTSweep.">
+ 
+   <title>Cwestiynau Cyffredin - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="cy_GB">
++  <meta property="og:title" content="Cwestiynau Cyffredin - TWTSweep">
++  <meta property="og:description" content="Atebion i gwestiynau cyffredin am lanhau simneiau, bwcio, a be sy'n digwydd yn ystod ymweliad TWTSweep.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/cy/cwestiynau-cyffredin.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Cwestiynau Cyffredin - TWTSweep">
++  <meta name="twitter:description" content="Atebion i gwestiynau cyffredin am lanhau simneiau, bwcio, a be sy'n digwydd yn ystod ymweliad TWTSweep.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -21,6 +34,70 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/faq.html" />
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/cy/cwestiynau-cyffredin.html",
++      "url": "https://www.twtsweep.co.uk/cy/cwestiynau-cyffredin.html",
++      "name": "Cwestiynau Cyffredin - TWTSweep",
++      "description": "Atebion i gwestiynau cyffredin am lanhau simneiau, bwcio, a be sy'n digwydd yn ystod ymweliad TWTSweep.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/cy/cysylltu.html b/cy/cysylltu.html
+index 305d151..a9055f6 100644
+--- a/cy/cysylltu.html
++++ b/cy/cysylltu.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="description" content="Cysylltwch efo TWTSweep am ymholiadau sgubo simdde ar draws Gwynedd, Conwy ac Ynys Môn.">
+ 
+   <title>Cysylltu - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="cy_GB">
++  <meta property="og:title" content="Cysylltu - TWTSweep">
++  <meta property="og:description" content="Cysylltwch efo TWTSweep am ymholiadau sgubo simdde ar draws Gwynedd, Conwy ac Ynys Môn.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/cy/cysylltu.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Cysylltu - TWTSweep">
++  <meta name="twitter:description" content="Cysylltwch efo TWTSweep am ymholiadau sgubo simdde ar draws Gwynedd, Conwy ac Ynys Môn.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -21,6 +34,70 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/contact.html" />
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/cy/cysylltu.html",
++      "url": "https://www.twtsweep.co.uk/cy/cysylltu.html",
++      "name": "Cysylltu - TWTSweep",
++      "description": "Cysylltwch efo TWTSweep am ymholiadau sgubo simdde ar draws Gwynedd, Conwy ac Ynys Môn.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/cy/gwasanaethau.html b/cy/gwasanaethau.html
+index 76e3c29..0a2cf47 100644
+--- a/cy/gwasanaethau.html
++++ b/cy/gwasanaethau.html
+@@ -8,6 +8,19 @@
+ 
+   <title>Gwasanaethau - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="cy_GB">
++  <meta property="og:title" content="Gwasanaethau - TWTSweep">
++  <meta property="og:description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/cy/gwasanaethau.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Gwasanaethau - TWTSweep">
++  <meta name="twitter:description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -21,6 +34,70 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/services.html" />
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/cy/gwasanaethau.html",
++      "url": "https://www.twtsweep.co.uk/cy/gwasanaethau.html",
++      "name": "Gwasanaethau - TWTSweep",
++      "description": "Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/cy/index.html b/cy/index.html
+index 2ab416b..3e364e7 100644
+--- a/cy/index.html
++++ b/cy/index.html
+@@ -4,9 +4,22 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Ysgubwr Simdde Proffesiynol sy'n gwasanaethu Gogledd Cymru. Bwcio ar-lein heddiw.">
++  <meta name="description" content="Sgubwr simdde proffesiynol, cofrestredig NACS, yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Bwciwch ar-lein heddiw.">
+   <title>TWTSweep - Sgubwr Simdde Gogledd Cymru</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="cy_GB">
++  <meta property="og:title" content="TWTSweep - Sgubwr Simdde Gogledd Cymru">
++  <meta property="og:description" content="Sgubwr simdde proffesiynol, cofrestredig NACS, yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Bwciwch ar-lein heddiw.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/cy/index.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="TWTSweep - Sgubwr Simdde Gogledd Cymru">
++  <meta name="twitter:description" content="Sgubwr simdde proffesiynol, cofrestredig NACS, yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Bwciwch ar-lein heddiw.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -22,7 +35,71 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/index.html" />
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
+-  </head>
++    <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/cy/index.html",
++      "url": "https://www.twtsweep.co.uk/cy/index.html",
++      "name": "TWTSweep - Sgubwr Simdde Gogledd Cymru",
++      "description": "Sgubwr simdde proffesiynol, cofrestredig NACS, yn gwasanaethu Gwynedd, Conwy ac Ynys Môn. Bwciwch ar-lein heddiw.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
++</head>
+   <body>
+   <header>
+     <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+diff --git a/en/404.html b/en/404.html
+index 1682c76..8b7736d 100644
+--- a/en/404.html
++++ b/en/404.html
+@@ -5,6 +5,7 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+   <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="robots" content="noindex, nofollow">
+ 
+   <title>404 - Page Not Found</title>
+ 
+@@ -15,10 +16,6 @@
+ 
+   <link rel="stylesheet" href="/combined-styles.css">
+ 
+-  <link rel="canonical" href="https://www.twtsweep.co.uk/en/404.html" />
+-  <link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/404.html" />
+-  <link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/404.html" />
+-  <link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/404.html" />
+ 
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
+diff --git a/en/about.html b/en/about.html
+index 6527b3e..1ba672e 100644
+--- a/en/about.html
++++ b/en/about.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="description" content="Meet Tom, your local NACS-registered chimney sweep serving communities across North Wales.">
+ 
+   <title>About Us - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="en_GB">
++  <meta property="og:title" content="About Us - TWTSweep">
++  <meta property="og:description" content="Meet Tom, your local NACS-registered chimney sweep serving communities across North Wales.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/en/about.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="About Us - TWTSweep">
++  <meta name="twitter:description" content="Meet Tom, your local NACS-registered chimney sweep serving communities across North Wales.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -22,6 +35,70 @@
+ 
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/en/about.html",
++      "url": "https://www.twtsweep.co.uk/en/about.html",
++      "name": "About Us - TWTSweep",
++      "description": "Meet Tom, your local NACS-registered chimney sweep serving communities across North Wales.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/en/areas.html b/en/areas.html
+index 124aec9..2473082 100644
+--- a/en/areas.html
++++ b/en/areas.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="description" content="TWTSweep covers Gwynedd, Conwy and Ynys Môn (Anglesey). Check if we serve your area in North Wales.">
+ 
+   <title>Areas We Serve - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="en_GB">
++  <meta property="og:title" content="Areas We Serve - TWTSweep">
++  <meta property="og:description" content="TWTSweep covers Gwynedd, Conwy and Ynys Môn (Anglesey). Check if we serve your area in North Wales.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/en/areas.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Areas We Serve - TWTSweep">
++  <meta name="twitter:description" content="TWTSweep covers Gwynedd, Conwy and Ynys Môn (Anglesey). Check if we serve your area in North Wales.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -25,6 +38,70 @@
+ 
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/en/areas.html",
++      "url": "https://www.twtsweep.co.uk/en/areas.html",
++      "name": "Areas We Serve - TWTSweep",
++      "description": "TWTSweep covers Gwynedd, Conwy and Ynys Môn (Anglesey). Check if we serve your area in North Wales.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/en/booking.html b/en/booking.html
+index 555c24e..335c0b7 100644
+--- a/en/booking.html
++++ b/en/booking.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="description" content="Book your chimney sweep appointment online in minutes. No upfront payment required.">
+ 
+   <title>Book Now - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="en_GB">
++  <meta property="og:title" content="Book Now - TWTSweep">
++  <meta property="og:description" content="Book your chimney sweep appointment online in minutes. No upfront payment required.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/en/booking.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Book Now - TWTSweep">
++  <meta name="twitter:description" content="Book your chimney sweep appointment online in minutes. No upfront payment required.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -22,6 +35,70 @@
+ 
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/en/booking.html",
++      "url": "https://www.twtsweep.co.uk/en/booking.html",
++      "name": "Book Now - TWTSweep",
++      "description": "Book your chimney sweep appointment online in minutes. No upfront payment required.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/en/contact.html b/en/contact.html
+index 79e34c4..fa955ce 100644
+--- a/en/contact.html
++++ b/en/contact.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="description" content="Get in touch with TWTSweep for chimney sweep enquiries across Gwynedd, Conwy and Anglesey.">
+ 
+   <title>Get in Touch - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="en_GB">
++  <meta property="og:title" content="Get in Touch - TWTSweep">
++  <meta property="og:description" content="Get in touch with TWTSweep for chimney sweep enquiries across Gwynedd, Conwy and Anglesey.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/en/contact.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Get in Touch - TWTSweep">
++  <meta name="twitter:description" content="Get in touch with TWTSweep for chimney sweep enquiries across Gwynedd, Conwy and Anglesey.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -22,6 +35,70 @@
+ 
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/en/contact.html",
++      "url": "https://www.twtsweep.co.uk/en/contact.html",
++      "name": "Get in Touch - TWTSweep",
++      "description": "Get in touch with TWTSweep for chimney sweep enquiries across Gwynedd, Conwy and Anglesey.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/en/faq.html b/en/faq.html
+index 1f6f514..13fb642 100644
+--- a/en/faq.html
++++ b/en/faq.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="description" content="Answers to common questions about chimney sweeping, booking, and what to expect from a TWTSweep visit.">
+ 
+   <title>FAQ - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="en_GB">
++  <meta property="og:title" content="FAQ - TWTSweep">
++  <meta property="og:description" content="Answers to common questions about chimney sweeping, booking, and what to expect from a TWTSweep visit.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/en/faq.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="FAQ - TWTSweep">
++  <meta name="twitter:description" content="Answers to common questions about chimney sweeping, booking, and what to expect from a TWTSweep visit.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -22,6 +35,70 @@
+ 
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/en/faq.html",
++      "url": "https://www.twtsweep.co.uk/en/faq.html",
++      "name": "FAQ - TWTSweep",
++      "description": "Answers to common questions about chimney sweeping, booking, and what to expect from a TWTSweep visit.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/en/index.html b/en/index.html
+index 667f71b..427dc88 100644
+--- a/en/index.html
++++ b/en/index.html
+@@ -4,9 +4,22 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="description" content="Professional, NACS-registered chimney sweep serving Gwynedd, Conwy and Anglesey. Book your chimney sweep online today.">
+   <title>TWTSweep - Chimney Sweep North Wales</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="en_GB">
++  <meta property="og:title" content="TWTSweep - Chimney Sweep North Wales">
++  <meta property="og:description" content="Professional, NACS-registered chimney sweep serving Gwynedd, Conwy and Anglesey. Book your chimney sweep online today.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/en/index.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="TWTSweep - Chimney Sweep North Wales">
++  <meta name="twitter:description" content="Professional, NACS-registered chimney sweep serving Gwynedd, Conwy and Anglesey. Book your chimney sweep online today.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -24,7 +37,71 @@
+   <!-- Scripts -->
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
+-  </head>
++    <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/en/index.html",
++      "url": "https://www.twtsweep.co.uk/en/index.html",
++      "name": "TWTSweep - Chimney Sweep North Wales",
++      "description": "Professional, NACS-registered chimney sweep serving Gwynedd, Conwy and Anglesey. Book your chimney sweep online today.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
++</head>
+   <body>
+   <header>
+     <a href="#main" class="skip-link">Skip to main content</a>
+diff --git a/en/services.html b/en/services.html
+index 9ba8324..2a0e039 100644
+--- a/en/services.html
++++ b/en/services.html
+@@ -4,10 +4,23 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="geo.region" content="GB-WLS">
+-  <meta name="description" content="Professional chimney sweep serving North Wales. Book online today.">
++  <meta name="description" content="Chimney sweeping, stove servicing, power sweeping and nest removal across North Wales. See TWTSweep's full range of services.">
+ 
+   <title>Our Services - TWTSweep</title>
+ 
++  <!-- Open Graph / Twitter -->
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="TWTSweep">
++  <meta property="og:locale" content="en_GB">
++  <meta property="og:title" content="Our Services - TWTSweep">
++  <meta property="og:description" content="Chimney sweeping, stove servicing, power sweeping and nest removal across North Wales. See TWTSweep's full range of services.">
++  <meta property="og:url" content="https://www.twtsweep.co.uk/en/services.html">
++  <meta property="og:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++  <meta name="twitter:card" content="summary_large_image">
++  <meta name="twitter:title" content="Our Services - TWTSweep">
++  <meta name="twitter:description" content="Chimney sweeping, stove servicing, power sweeping and nest removal across North Wales. See TWTSweep's full range of services.">
++  <meta name="twitter:image" content="https://www.twtsweep.co.uk/images/LlynPadarn.jpeg">
++
+   <link rel="preload" href="/fonts/NotoSerif-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/NotoSerif-welsh-600.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="/fonts/Inter-welsh-400.woff2" as="font" type="font/woff2" crossorigin>
+@@ -22,6 +35,70 @@
+ 
+   <script src="/components.js" defer></script>
+   <script type="module" src="/js/main.js"></script>
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@graph": [
++    {
++      "@type": "LocalBusiness",
++      "@id": "https://www.twtsweep.co.uk/#business",
++      "name": "TWTSweep",
++      "url": "https://www.twtsweep.co.uk",
++      "telephone": "+447793101565",
++      "email": "info@twtsweep.co.uk",
++      "priceRange": "££",
++      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Tyddyn Du, Gallt Y Foel",
++        "addressLocality": "Caernarfon",
++        "addressRegion": "Gwynedd",
++        "postalCode": "LL55 3EG",
++        "addressCountry": "GB"
++      },
++      "areaServed": [
++        { "@type": "AdministrativeArea", "name": "Gwynedd" },
++        { "@type": "AdministrativeArea", "name": "Conwy" },
++        { "@type": "AdministrativeArea", "name": "Anglesey" }
++      ],
++      "serviceType": "Chimney sweeping",
++      "openingHoursSpecification": [
++        {
++          "@type": "OpeningHoursSpecification",
++          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
++          "opens": "09:00",
++          "closes": "17:00"
++        }
++      ],
++      "sameAs": [
++        "https://www.facebook.com/twtsweep",
++        "https://www.instagram.com/twtsweep"
++      ],
++      "memberOf": {
++        "@type": "Organization",
++        "name": "NACS",
++        "url": "https://www.nacs.org.uk"
++      }
++    },
++    {
++      "@type": "WebSite",
++      "@id": "https://www.twtsweep.co.uk/#website",
++      "url": "https://www.twtsweep.co.uk",
++      "name": "TWTSweep",
++      "publisher": { "@id": "https://www.twtsweep.co.uk/#business" }
++    },
++    {
++      "@type": "WebPage",
++      "@id": "https://www.twtsweep.co.uk/en/services.html",
++      "url": "https://www.twtsweep.co.uk/en/services.html",
++      "name": "Our Services - TWTSweep",
++      "description": "Chimney sweeping, stove servicing, power sweeping and nest removal across North Wales. See TWTSweep's full range of services.",
++      "isPartOf": { "@id": "https://www.twtsweep.co.uk/#website" },
++      "about": { "@id": "https://www.twtsweep.co.uk/#business" }
++    }
++    ]
++  }
++  </script>
+ </head>
+ <body>
+ 
+diff --git a/robots.txt b/robots.txt
+new file mode 100644
+index 0000000..2f0ee70
+--- /dev/null
++++ b/robots.txt
+@@ -0,0 +1,4 @@
++User-agent: *
++Allow: /
++
++Sitemap: https://www.twtsweep.co.uk/sitemap.xml
+diff --git a/schema b/schema
+deleted file mode 100644
+index 59cd716..0000000
+--- a/schema
++++ /dev/null
+@@ -1,86 +0,0 @@
+-<script type="application/ld+json">
+-{
+-  "@context": "https://schema.org",
+-  "@graph": [
+-
+-    {
+-      "@type": "LocalBusiness",
+-      "@id": "https://www.twtsweep.co.uk/#business",
+-      "name": "TWTSweep",
+-      "url": "https://www.twtsweep.co.uk",
+-      "telephone": "+447793101565",
+-      "email": "info@twtsweep.co.uk",
+-      "priceRange": "££",
+-      "description": "TWTSweep is a NACS registered chimney sweep providing professional chimney cleaning, stoves, wood burners, open fires, and chimney services across Gwynedd, Conwy and Anglesey.",
+-
+-      "address": {
+-        "@type": "PostalAddress",
+-        "streetAddress": "Tyddyn Du, Gallt Y Foel",
+-        "addressLocality": "Caernarfon",
+-        "addressRegion": "Gwynedd",
+-        "postalCode": "LL55 3EG",
+-        "addressCountry": "GB"
+-      },
+-
+-      "areaServed": [
+-        { "@type": "AdministrativeArea", "name": "Gwynedd" },
+-        { "@type": "AdministrativeArea", "name": "Conwy" },
+-        { "@type": "AdministrativeArea", "name": "Anglesey" }
+-      ],
+-
+-      "serviceType": "Chimney sweeping",
+-
+-      "openingHoursSpecification": [
+-        {
+-          "@type": "OpeningHoursSpecification",
+-          "dayOfWeek": [
+-            "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+-          ],
+-          "opens": "09:00",
+-          "closes": "17:00"
+-        }
+-      ],
+-
+-      "sameAs": [
+-        "https://www.facebook.com/twtsweep",
+-        "https://www.instagram.com/twtsweep"
+-      ],
+-
+-      "memberOf": {
+-        "@type": "Organization",
+-        "name": "NACS",
+-        "url": "https://www.nacs.org.uk"
+-      }
+-    },
+-
+-    {
+-      "@type": "WebSite",
+-      "@id": "https://www.twtsweep.co.uk/#website",
+-      "url": "https://www.twtsweep.co.uk",
+-      "name": "TWTSweep",
+-      "publisher": {
+-        "@id": "https://www.twtsweep.co.uk/#business"
+-      },
+-      "potentialAction": {
+-        "@type": "SearchAction",
+-        "target": "https://www.twtsweep.co.uk/?s={search_term_string}",
+-        "query-input": "required name=search_term_string"
+-      }
+-    },
+-
+-    {
+-      "@type": "WebPage",
+-      "@id": "https://www.twtsweep.co.uk/#webpage",
+-      "url": "https://www.twtsweep.co.uk/",
+-      "name": "TWTSweep Chimney Sweep Services",
+-      "isPartOf": {
+-        "@id": "https://www.twtsweep.co.uk/#website"
+-      },
+-      "about": {
+-        "@id": "https://www.twtsweep.co.uk/#business"
+-      }
+-    }
+-
+-  ]
+-}
+-</script>
+\ No newline at end of file
+diff --git a/sitemap.xml b/sitemap.xml
+new file mode 100644
+index 0000000..d444744
+--- /dev/null
++++ b/sitemap.xml
+@@ -0,0 +1,88 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
++        xmlns:xhtml="http://www.w3.org/1999/xhtml">
++  <url>
++    <loc>https://www.twtsweep.co.uk/en/index.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/index.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/index.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/index.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/cy/index.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/index.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/index.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/index.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/en/services.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/services.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/gwasanaethau.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/services.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/cy/gwasanaethau.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/services.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/gwasanaethau.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/services.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/en/areas.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/areas.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/ardaloedd.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/areas.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/cy/ardaloedd.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/areas.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/ardaloedd.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/areas.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/en/faq.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/faq.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/cwestiynau-cyffredin.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/faq.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/cy/cwestiynau-cyffredin.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/faq.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/cwestiynau-cyffredin.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/faq.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/en/about.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/about.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/amdana.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/about.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/cy/amdana.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/about.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/amdana.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/about.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/en/booking.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/booking.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/bwcio.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/booking.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/cy/bwcio.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/booking.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/bwcio.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/booking.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/en/contact.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/contact.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/cysylltu.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/contact.html"/>
++  </url>
++  <url>
++    <loc>https://www.twtsweep.co.uk/cy/cysylltu.html</loc>
++    <xhtml:link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/contact.html"/>
++    <xhtml:link rel="alternate" hreflang="cy" href="https://www.twtsweep.co.uk/cy/cysylltu.html"/>
++    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.twtsweep.co.uk/en/contact.html"/>
++  </url>
++</urlset>
