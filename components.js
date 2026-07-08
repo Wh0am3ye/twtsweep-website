@@ -22,6 +22,31 @@ function loadComponents() {
   getContactDetails();
 
   updateLangButton();
+  setActiveNavLink();
+}
+
+function setActiveNavLink() {
+  let path = window.location.pathname;
+
+  // Normalize trailing slash → index.html
+  if (path.endsWith("/")) {
+    path += "index.html";
+  }
+  path = path.replace(/\/+$/, "");
+
+  document.querySelectorAll(".menu a").forEach(link => {
+    let linkPath = link.pathname;
+    if (linkPath.endsWith("/")) {
+      linkPath += "index.html";
+    }
+    linkPath = linkPath.replace(/\/+$/, "");
+
+    if (linkPath === path) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
 }
 
 function updateLangButton() {

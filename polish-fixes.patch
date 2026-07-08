@@ -1,0 +1,447 @@
+diff --git a/404.html b/404.html
+index c7bdbb3..3666f78 100644
+--- a/404.html
++++ b/404.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -27,7 +28,7 @@
+ <header>
+   <nav>
+     <a href="index.html">
+-      <img src="../images/logo.webp" alt="TWTSweep Logo" class="logo">
++      <img src="../images/logo.webp" alt="TWTSweep Logo" class="logo" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+diff --git a/components.js b/components.js
+index 2b91320..111550e 100644
+--- a/components.js
++++ b/components.js
+@@ -22,6 +22,31 @@ function loadComponents() {
+   getContactDetails();
+ 
+   updateLangButton();
++  setActiveNavLink();
++}
++
++function setActiveNavLink() {
++  let path = window.location.pathname;
++
++  // Normalize trailing slash → index.html
++  if (path.endsWith("/")) {
++    path += "index.html";
++  }
++  path = path.replace(/\/+$/, "");
++
++  document.querySelectorAll(".menu a").forEach(link => {
++    let linkPath = link.pathname;
++    if (linkPath.endsWith("/")) {
++      linkPath += "index.html";
++    }
++    linkPath = linkPath.replace(/\/+$/, "");
++
++    if (linkPath === path) {
++      link.setAttribute("aria-current", "page");
++    } else {
++      link.removeAttribute("aria-current");
++    }
++  });
+ }
+ 
+ function updateLangButton() {
+diff --git a/cy/404.html b/cy/404.html
+index 57a97e3..d83ef2b 100644
+--- a/cy/404.html
++++ b/cy/404.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -27,7 +28,7 @@
+   <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+diff --git a/cy/amdana.html b/cy/amdana.html
+index 21a8daf..5e27d3c 100644
+--- a/cy/amdana.html
++++ b/cy/amdana.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -107,7 +108,7 @@
+   <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+@@ -146,7 +147,7 @@
+       <div class="text-container">
+         <p>Hi, I'm Tom, the person behind TWTSweep. A NACS-registered chimney sweep covering Gwynedd, Conwy and Anglesey.</p>
+       </div>
+-      <img src="/images/Tom-Llyn-Padarn.jpeg" alt="Tom wrth Lyn Padarn" class="content-image">     
++      <img src="/images/Tom-Llyn-Padarn.jpeg" alt="Tom wrth Lyn Padarn" class="content-image" width="420" height="436" decoding="async">     
+     </div>
+     <div class="text-container">  
+       <h2>Y Gwaith</h2>
+@@ -158,7 +159,7 @@
+       <p>If you're unsure whether your chimney or stove needs attention, please don't hesitate to get in touch. I'd rather give you an honest answer, even if that answer is “it's fine for now”, than have you worry unnecessarily. You can book online at a time that suits you, or simply drop me a message if you'd prefer a conversation first.</p>
+     </div>
+     <div class="card about-intro img-left">
+-      <img src="/images/logo-dysgu-cymraeg.webp" alt="Dysgu Cymraeg" loading="lazy">
++      <img src="/images/logo-dysgu-cymraeg.webp" alt="Dysgu Cymraeg" loading="lazy" decoding="async">
+       <div class="text-container">
+         <h2>Welsh Language</h2>
+         <p>Dw i'n dysgu Cymraeg, and while I'm not fluent yet, I think it's important to make the effort. My website and some communications are available in both Cymraeg and English, and that's something I'll keep building on.</p>
+diff --git a/cy/ardaloedd.html b/cy/ardaloedd.html
+index 792543b..25e2681 100644
+--- a/cy/ardaloedd.html
++++ b/cy/ardaloedd.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -111,7 +112,7 @@
+   <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+diff --git a/cy/bwcio.html b/cy/bwcio.html
+index c5e0127..db1e5bd 100644
+--- a/cy/bwcio.html
++++ b/cy/bwcio.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -107,7 +108,7 @@
+   <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+diff --git a/cy/cwestiynau-cyffredin.html b/cy/cwestiynau-cyffredin.html
+index 1d1b6de..308a8cc 100644
+--- a/cy/cwestiynau-cyffredin.html
++++ b/cy/cwestiynau-cyffredin.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -203,7 +204,7 @@
+   <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+diff --git a/cy/cysylltu.html b/cy/cysylltu.html
+index 5a464a7..7f009cd 100644
+--- a/cy/cysylltu.html
++++ b/cy/cysylltu.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -107,7 +108,7 @@
+   <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+diff --git a/cy/gwasanaethau.html b/cy/gwasanaethau.html
+index 67cc870..46f90d2 100644
+--- a/cy/gwasanaethau.html
++++ b/cy/gwasanaethau.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -107,7 +108,7 @@
+   <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+diff --git a/cy/index.html b/cy/index.html
+index fa0b065..e51b292 100644
+--- a/cy/index.html
++++ b/cy/index.html
+@@ -3,6 +3,7 @@
+   <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -107,7 +108,7 @@
+     <a href="#main" class="skip-link">Neidio i'r prif gynnwys</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo200px.webp" alt="Logo TWTSweep" class="logo" width="80" height="80">
++      <img src="/images/logo200px.webp" alt="Logo TWTSweep" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="en-GB">English</a>
+@@ -153,7 +154,7 @@
+       <p>Mae ysgubo rheolaidd gan ysgubwr cofrestredig NACS yn cadw'ch cartref yn ddiogel, eich tân yn llosgi'n iawn, a'ch simnai mewn cyflwr gorau posib.</p>
+     </div>
+     <a href="https://www.nacs.org.uk/" target="_blank" aria-label="Gwefan NACS (yn agor mewn ffenestr newydd)" aria-hidden="false">
+-      <img src="/images/NACS Member Logo Transparent.webp" alt="Logo aelod NACS" id="nacs-logo">
++      <img src="/images/NACS Member Logo Transparent.webp" alt="Logo aelod NACS" id="nacs-logo" width="254" height="300" decoding="async">
+     </a>
+   </section>
+   <section class="container">
+diff --git a/en/404.html b/en/404.html
+index 98290c4..996e77c 100644
+--- a/en/404.html
++++ b/en/404.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -28,7 +29,7 @@
+   <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+diff --git a/en/about.html b/en/about.html
+index 233b756..f677d8a 100644
+--- a/en/about.html
++++ b/en/about.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -108,7 +109,7 @@
+   <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+@@ -148,7 +149,7 @@
+         <p>Hi, I'm Tom, the person behind TWTSweep. A NACS-registered chimney sweep covering Gwynedd, Conwy and Anglesey.</p>
+         <p>When I realised my initials <i>'TWT'</i> (pronounced 'toot') meant <i>'tidy'</i> in Welsh, it was a no-brainer to make it part of my branding.</p>
+       </div>
+-      <img src="/images/Tom-Llyn-Padarn.jpeg" alt="Tom at Llyn Padarn" class="content-image">     
++      <img src="/images/Tom-Llyn-Padarn.jpeg" alt="Tom at Llyn Padarn" class="content-image" width="420" height="436" decoding="async">     
+     </div>
+     <div class="text-container">  
+       <h2>The Work</h2>
+@@ -160,7 +161,7 @@
+       <p>If you're unsure whether your chimney or stove needs attention, please don't hesitate to get in touch. I'd rather give you an honest answer, even if that answer is “it's fine for now”, than have you worry unnecessarily. You can book online at a time that suits you, or simply drop me a message if you'd prefer a conversation first.</p>
+     </div>
+     <div class="card about-intro img-left">
+-      <img src="/images/logo-dysgu-cymraeg.webp" alt="DysguCymraeg" loading="lazy">
++      <img src="/images/logo-dysgu-cymraeg.webp" alt="DysguCymraeg" loading="lazy" decoding="async">
+       <div class="text-container">
+         <h2>Welsh Language</h2>
+         <p>Dw i'n dysgu Cymraeg, and while I'm not fluent yet, I think it's important to make the effort. My website and some communications are available in both Cymraeg and English, and that's something I'll keep building on.</p>
+diff --git a/en/areas.html b/en/areas.html
+index 5ef8f54..6912b67 100644
+--- a/en/areas.html
++++ b/en/areas.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -111,7 +112,7 @@
+   <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+diff --git a/en/booking.html b/en/booking.html
+index dd537c8..5418b61 100644
+--- a/en/booking.html
++++ b/en/booking.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -108,7 +109,7 @@
+   <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+diff --git a/en/contact.html b/en/contact.html
+index ad16cf5..7db2d24 100644
+--- a/en/contact.html
++++ b/en/contact.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -108,7 +109,7 @@
+   <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+diff --git a/en/faq.html b/en/faq.html
+index 207fd7f..7a89936 100644
+--- a/en/faq.html
++++ b/en/faq.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -204,7 +205,7 @@
+   <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+diff --git a/en/index.html b/en/index.html
+index 8f78cf5..a881267 100644
+--- a/en/index.html
++++ b/en/index.html
+@@ -3,6 +3,7 @@
+   <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -109,7 +110,7 @@
+     <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo200px.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo200px.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
+@@ -155,7 +156,7 @@
+       <p>Regular sweeping from a NACS registered sweep keeps your home safe, your fire burning properly, and your chimney in top condition.</p>
+     </div>
+     <a href="https://www.nacs.org.uk/" target="_blank" aria-label="NACS Website (opens in new window)" aria-hidden="false">
+-      <img src="/images/NACS Member Logo Transparent.webp" alt="NACS Member Logo" id="nacs-logo">
++      <img src="/images/NACS Member Logo Transparent.webp" alt="NACS Member Logo" id="nacs-logo" width="254" height="300" decoding="async">
+     </a>
+   </section>
+   <section class="container">
+diff --git a/en/services.html b/en/services.html
+index bc80594..4895f91 100644
+--- a/en/services.html
++++ b/en/services.html
+@@ -3,6 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta name="theme-color" content="#232021">
+   <meta name="geo.region" content="GB-WLS">
+   <link rel="icon" href="/favicon.ico">
+   <link rel="apple-touch-icon" href="/images/logo200px.webp">
+@@ -108,7 +109,7 @@
+   <a href="#main" class="skip-link">Skip to main content</a>
+   <nav>
+     <a href="index.html">
+-      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80">
++      <img src="/images/logo.webp" alt="TWTSweep Logo" class="logo" width="80" height="80" decoding="async">
+     </a>
+     <div class="nav-right">
+       <a href="#" class="btn lang-btn" lang="cy">Cymraeg</a>
