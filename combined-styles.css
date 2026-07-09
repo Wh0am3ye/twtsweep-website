@@ -610,6 +610,31 @@ use {
   border: 1.5px solid var(--bg);
   font-size: 0.875rem;
   font-weight: 600;
+  gap: 0.35rem;
+}
+
+.lang-btn-label--short {
+  display: none;
+}
+
+.lang-btn-label--long {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .lang-btn {
+    padding: 6px 10px;
+    min-width: 42px;
+    justify-content: center;
+  }
+
+  .lang-btn-label--long {
+    display: none;
+  }
+
+  .lang-btn-label--short {
+    display: inline;
+  }
 }
 
 .btn:hover {
