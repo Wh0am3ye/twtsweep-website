@@ -46,13 +46,10 @@ export function initSmoke() {
 
       this.life++;
 
-      // ⬇️ Opacity lifecycle
-      const lifeRatio = this.life / this.maxLife;   
-      this.size = this.baseSize * (1 + lifeRatio * 4);
+      // Opacity/size lifecycle
       const t = this.life / this.maxLife;
-
-this.opacity =
-  0.5 * (1 - (t * t * (3 - 2 * t)));
+      this.size = this.baseSize * (1 + t * 4);
+      this.opacity = 0.5 * (1 - (t * t * (3 - 2 * t)));
     }
 
     draw() {
@@ -91,14 +88,14 @@ this.opacity =
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = particles.length - 1; i >= 0; i--) {
-  const p = particles[i];
-  p.update();
-  p.draw();
+      const p = particles[i];
+      p.update();
+      p.draw();
 
-  if (p.life >= p.maxLife || p.opacity <= 0) {
-    particles.splice(i, 1);
-  }
-}
+      if (p.life >= p.maxLife || p.opacity <= 0) {
+        particles.splice(i, 1);
+      }
+    }
 
     requestAnimationFrame(animate);
   }

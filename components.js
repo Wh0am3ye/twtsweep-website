@@ -17,6 +17,20 @@ const langMap = {
   "/cy/cysylltu.html": "/en/contact.html"
 };
 
+// Normalize a pathname so it always ends in a concrete .html filename,
+// regardless of trailing slashes or Cloudflare Pages' clean-URL rewriting
+// (which serves /page instead of /page.html in production).
+function normalizePath(path) {
+  if (path.endsWith("/")) {
+    path += "index.html";
+  }
+  path = path.replace(/\/+$/, "");
+  if (!path.endsWith(".html")) {
+    path += ".html";
+  }
+  return path;
+}
+
 // Load components based on which language folder
 function loadComponents() {
   getContactDetails();
@@ -28,26 +42,10 @@ function loadComponents() {
 window.addEventListener("resize", updateLangButton);
 
 function setActiveNavLink() {
-  let path = window.location.pathname;
-
-  // Normalize trailing slash → index.html
-  if (path.endsWith("/")) {
-    path += "index.html";
-  }
-  path = path.replace(/\/+$/, "");
-  if (!path.endsWith(".html")) {
-    path += ".html";
-  }
+  const path = normalizePath(window.location.pathname);
 
   document.querySelectorAll(".menu a").forEach(link => {
-    let linkPath = link.pathname;
-    if (linkPath.endsWith("/")) {
-      linkPath += "index.html";
-    }
-    linkPath = linkPath.replace(/\/+$/, "");
-    if (!linkPath.endsWith(".html")) {
-      linkPath += ".html";
-    }
+    const linkPath = normalizePath(link.pathname);
 
     if (linkPath === path) {
       link.setAttribute("aria-current", "page");
@@ -61,22 +59,7 @@ function updateLangButton() {
   const langBtn = document.querySelector(".lang-btn");
   if (!langBtn) return;
 
-  let path = window.location.pathname;
-
-  // Normalize trailing slash → index.html
-  if (path.endsWith("/")) {
-    path += "index.html";
-  }
-
-  // Remove relative weirdness (optional but safer)
-  path = path.replace(/\/+$/, "");
-
-  // Cloudflare Pages serves/redirects clean URLs without the .html
-  // extension in production, so window.location.pathname won't match
-  // the .html-keyed langMap unless we add it back here.
-  if (!path.endsWith(".html")) {
-    path += ".html";
-  }
+  const path = normalizePath(window.location.pathname);
 
   // Set correct link
   if (langMap[path]) {

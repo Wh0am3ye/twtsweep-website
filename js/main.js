@@ -40,7 +40,7 @@ function initMenu() {
 
     // Prevent screen readers reaching background content
     document.querySelector("nav").setAttribute("data-menu-open", "true");
-    document.querySelectorAll("body > *:not(header          )").forEach(el => {
+    document.querySelectorAll("body > *:not(header)").forEach(el => {
       el.setAttribute("inert", "");
     });
 
