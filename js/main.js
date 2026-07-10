@@ -104,10 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenu();
 
   // Conditional loading for page-specific features
-  if (document.querySelector("form")) {
-    import("./form.js").then(m => m.initForm());
-  }
-
   if (document.querySelector(".review-slide")) {
     import("./carousel.js").then(m => m.initCarousel());
   }

@@ -92,7 +92,7 @@ function getContactDetails() {
   const emailUser = "info";
   const emailDomain = "twtsweep.co.uk";
   const email = `${emailUser}@${emailDomain}`;
-  const phone = "07793 101 565";
+  const phone = "07793101565";
   const formattedPhone = formatPhone(phone);
   const whatsappNumber = "44" + phone.substring(1);
 
@@ -128,5 +128,5 @@ function getContactDetails() {
 
 // Optional formatter
 function formatPhone(num) {
-  return num.replace(/(\d{5})(\d{3}) (\d{3})/, "$1 $2 $3");
+  return num.replace(/(\d{5})(\d{3})(\d{3})/, "$1 $2 $3");
 }
