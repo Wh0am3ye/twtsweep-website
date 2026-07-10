@@ -866,13 +866,13 @@ footer {
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   margin-top: 15px;
 }
 
 .carousel-dot {
-  width: 10px;
-  height: 10px;
+  width: 19px;
+  height: 19px;
   border-radius: 50%;
   background: var(--accent-2);
   cursor: pointer;
