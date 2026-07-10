@@ -115,13 +115,16 @@ function getContactDetails() {
   });
 
   // WHATSAPP
+  const isEnglish = window.location.pathname.includes("/en/");
+  const newTabNotice = isEnglish ? "(opens in a new tab)" : "(yn agor mewn ffenestr newydd)";
+
   document.querySelectorAll("[data-whatsapp]").forEach(el => {
     const link = `https://wa.me/${whatsappNumber}`;
 
     if (el.tagName === "A") {
       el.setAttribute("href", link);
     } else {
-      el.innerHTML = `<a href="${link}" target="_blank">${formattedPhone}</a>`;
+      el.innerHTML = `<a href="${link}" target="_blank">${formattedPhone} <span class="visually-hidden">${newTabNotice}</span></a>`;
     }
   });
 }

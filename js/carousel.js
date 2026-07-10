@@ -4,9 +4,13 @@ export function initCarousel() {
 
   if (!slides.length || !dotsContainer) return;
 
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
   let current = 0;
   let interval;
-  let isPaused = false;
+  let isPaused = prefersReducedMotion;
 
   slides[0].classList.add("active");
   slides[0].setAttribute("aria-hidden", "false");
@@ -83,13 +87,14 @@ export function initCarousel() {
   }
 
   function resumeAuto() {
+    if (prefersReducedMotion) return;
     isPaused = false;
     startAuto();
   }
 
   function resetAuto() {
     stopAuto();
-    if (!isPaused) {
+    if (!isPaused && !prefersReducedMotion) {
       startAuto();
     }
   }
