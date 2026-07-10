@@ -72,6 +72,12 @@ export function initMap() {
       { nameEn: "Pwllheli", nameCy: "Pwllheli", coords: [-4.4174, 52.8886] }
     ];
 
+    const sortedTowns = [...towns].sort((a, b) => {
+      const leftLabel = isWelshPage ? a.nameCy || a.nameEn : a.nameEn;
+      const rightLabel = isWelshPage ? b.nameCy || b.nameEn : b.nameEn;
+      return leftLabel.localeCompare(rightLabel, isWelshPage ? "cy" : "en", { sensitivity: "base" });
+    });
+
     const townListContainer = document.getElementById("town-list");
     if (townListContainer) {
       const listTitle = document.createElement("h2");
@@ -80,7 +86,7 @@ export function initMap() {
       const townList = document.createElement("ul");
       townList.className = "town-list__items";
 
-      towns.forEach(town => {
+      sortedTowns.forEach(town => {
         const item = document.createElement("li");
         item.textContent = isWelshPage ? town.nameCy || town.nameEn : town.nameEn;
         townList.appendChild(item);
@@ -89,7 +95,7 @@ export function initMap() {
       townListContainer.replaceChildren(listTitle, townList);
     }
 
-    towns.forEach(town => {
+    sortedTowns.forEach(town => {
       const langLabel = isWelshPage ? town.nameCy || town.nameEn : town.nameEn;
 
       const dot = document.createElement("div");
