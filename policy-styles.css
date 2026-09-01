@@ -1,0 +1,279 @@
+/* =========================
+1. FONTS
+========================= */
+/* noto-serif */
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('/fonts/NotoSerif-welsh-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('/fonts/NotoSerif-welsh-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-welsh-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-welsh-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+6. HEADER / NAV
+========================= */
+header {
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  height: 80px;
+  flex: 0 0 auto;
+}
+
+.nav-right {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu {
+  position: fixed;
+  inset: 0;
+  background: var(--primary);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu a {
+  color: var(--bg);
+  font-size: 1.5rem;
+}
+
+.menu a:hover {
+  color: var(--accent);
+}
+
+.menu li {
+  margin-bottom: 0;
+}
+
+.menu.active li {
+  margin-bottom: 20px;
+}
+
+.menu:not(.active) .long-item {
+  display: inline-block;
+  max-width: 90px;
+  text-align: center;
+}
+
+.toggle {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--bg);
+  cursor: pointer;
+}
+
+.toggle svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 43.6px;
+  right: 2rem;
+}
+
+.toggle:hover,
+.close:hover {
+  color: var(--accent);
+}
+
+.lang-btn {
+  background: transparent;
+  color: var(--bg);
+  padding: 6px 20px;
+  height: 32px;
+  border-radius: calc(32px/5);
+  border: 1.5px solid var(--bg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 0.35rem;
+}
+
+.lang-btn-label--short {
+  display: none;
+}
+
+.lang-btn-label--long {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .lang-btn {
+    padding: 6px 10px;
+    min-width: 42px;
+    justify-content: center;
+  }
+
+  .lang-btn-label--long {
+    display: none;
+  }
+
+  .lang-btn-label--short {
+    display: inline;
+  }
+}
+
+.lang-btn:hover {
+  background: var(--accent-2);
+  color: var(--bg);
+}
+
+/* =========================
+14. FOOTER
+========================= */
+footer {
+  padding: 2rem 2rem;
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.social-links a svg {
+  width: 1.5rem;
+  display: block;
+  color: var(--bg);
+}
+
+.social-links a:hover svg {
+  color: var(--accent);
+}
+
+/* =========================
+15. MEDIA QUERIES
+========================= */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    inset: 0;
+    background: var(--primary);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu a {
+    color: var(--bg);
+    font-size: 1.5rem;
+  }
+
+  .menu li:nth-child(1) {
+    padding: 0;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+
+  nav strong {
+    order: 1;
+  }
+
+  .nav-right {
+    order: 3;
+  }
+}
+
+@media (min-width: 990px) {
+  .menu {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    background: none;
+    height: auto;
+    width: auto;
+    order: 2;
+    margin: 0 20px;
+  }
+
+  .menu a {
+    font-size: 1rem;
+  }
+
+  .toggle,
+  .close {
+    display: none;
+  }
+
+  li {
+    padding: 0 10px;
+  }
+
+  .menu li:nth-child(1) {
+    padding: 0;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+
+  nav strong {
+    order: 1;
+  }
+
+  .nav-right {
+    order: 3;
+  }
+}
