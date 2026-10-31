@@ -80,8 +80,8 @@ function updateLangButton() {
   const shortLabel = isEnglish ? "CY" : "EN";
 
   langBtn.innerHTML = `${iconMarkup}<span class="lang-btn-label lang-btn-label--long">${longLabel}</span><span class="lang-btn-label lang-btn-label--short">${shortLabel}</span>`;
-  langBtn.setAttribute("aria-label", isEnglish ? "Switch to Welsh" : "Switch to English");
-  langBtn.setAttribute("title", isEnglish ? "Switch to Welsh" : "Switch to English");
+  langBtn.setAttribute("aria-label", isEnglish ? "Switch to Welsh" : "Newid i'r Saesneg");
+  langBtn.setAttribute("title", isEnglish ? "Switch to Welsh" : "Newid i'r Saesneg");
 }
 
 // Load components when page is ready
@@ -116,7 +116,7 @@ function getContactDetails() {
 
   // WHATSAPP
   const isEnglish = window.location.pathname.includes("/en/");
-  const newTabNotice = isEnglish ? "(opens in a new tab)" : "(yn agor mewn ffenestr newydd)";
+  const newTabNotice = isEnglish ? "(opens in new window)" : "(yn agor mewn ffenestr newydd)";
 
   document.querySelectorAll("[data-whatsapp]").forEach(el => {
     const link = `https://wa.me/${whatsappNumber}`;

@@ -18,7 +18,8 @@ export function initCarousel() {
   slides.forEach((_, i) => {
     const button = document.createElement("button");
     button.classList.add("carousel-dot");
-    button.setAttribute("aria-label", `Review ${i + 1} of ${slides.length}`);
+    const isWelshPage = document.documentElement.lang.startsWith("cy");
+    button.setAttribute("aria-label", isWelshPage ? `Adolygiad ${i + 1} o ${slides.length}` : `Review ${i + 1} of ${slides.length}`);
     button.setAttribute("aria-pressed", i === 0 ? "true" : "false");
     if (i === 0) button.classList.add("active");
 
