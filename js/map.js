@@ -63,7 +63,7 @@ export function initMap() {
       { nameEn: "Abergele", nameCy: "Abergele", coords: [-3.5822, 53.2844] },
       { nameEn: "Amlwch", nameCy: "Amlwch", coords: [-4.3454, 53.4107] },
       { nameEn: "Betws-y-Coed", nameCy: "Betws-y-coed", coords: [-3.8009, 53.0911] },
-      { nameEn: "Cricieth", nameCy: "Cricieth", coords: [-4.2332, 52.9188] },
+      { nameEn: "Criccieth", nameCy: "Cricieth", coords: [-4.2332, 52.9188] },
       { nameEn: "Harlech", nameCy: "Harlech", coords: [-4.1024, 52.8567] },
       { nameEn: "Holyhead", nameCy: "Caergybi", coords: [-4.6323, 53.3092] },
       { nameEn: "Llandudno", nameCy: "Llandudno", coords: [-3.8272, 53.3238] },
