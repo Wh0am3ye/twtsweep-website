@@ -12,12 +12,13 @@ export function initMap() {
     zoom: 8.2,
     performanceMetricsCollection: false,
     collectResourceTiming: false,
-    scrollZoom: false,
-    doubleClickZoom: false,
-    touchZoomRotate: false,
-    boxZoom: false
+    interactive: false
   });
-  map.getCanvas().setAttribute("aria-label", isWelshPage ? "Map o'r ardal wasanaeth" : "Map of my service area");
+  const mapLabel = isWelshPage ? "Map o'r ardal wasanaeth" : "Map of my service area";
+  const mapContainer = map.getCanvasContainer();
+  mapContainer.setAttribute("role", "img");
+  mapContainer.setAttribute("aria-label", mapLabel);
+  map.getCanvas().setAttribute("tabindex", "-1");
 
   map.on("load", () => {
     fetch("/maps/service-areas.geojson")
