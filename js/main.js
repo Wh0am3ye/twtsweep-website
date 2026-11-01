@@ -19,6 +19,9 @@ function initMenu() {
     const isMobile = window.matchMedia("(max-width: 989px)").matches;
 
     if (!isMobile) {
+      if (menu.classList.contains("active")) {
+        resetMenuState();
+      }
       menu.removeAttribute("aria-hidden");
       menu.removeAttribute("tabindex");
       return;
@@ -31,6 +34,15 @@ function initMenu() {
       menu.setAttribute("aria-hidden", "true");
       menu.setAttribute("tabindex", "-1");
     }
+  }
+
+  function resetMenuState() {
+    menu.classList.remove("active");
+    toggle.setAttribute("aria-expanded", "false");
+    document.querySelector("nav").removeAttribute("data-menu-open");
+    document.querySelectorAll("[inert]").forEach(el => {
+      el.removeAttribute("inert");
+    });
   }
 
   function openMenu() {
@@ -49,14 +61,8 @@ function initMenu() {
   }
 
   function closeMenu() {
-    menu.classList.remove("active");
+    resetMenuState();
     syncMenuState();
-    toggle.setAttribute("aria-expanded", "false");
-
-    // Restore background content
-    document.querySelectorAll("[inert]").forEach(el => {
-      el.removeAttribute("inert");
-    });
 
     // Return focus to the hamburger button
     toggle.focus();
@@ -65,7 +71,9 @@ function initMenu() {
   // Focus trap on Tab / Shift+Tab
   menu.addEventListener("keydown", e => {
     if (e.key === "Escape") {
-      closeMenu();
+      if (menu.classList.contains("active")) {
+        closeMenu();
+      }
       return;
     }
 
