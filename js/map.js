@@ -3,6 +3,7 @@ export function initMap() {
   if (!mapElement || !window.mapboxgl) return;
 
   mapboxgl.accessToken = window.MAPBOX_TOKEN;
+  const isWelshPage = document.documentElement.lang.startsWith("cy");
 
   const map = new mapboxgl.Map({
     container: "map",
@@ -16,6 +17,7 @@ export function initMap() {
     touchZoomRotate: false,
     boxZoom: false
   });
+  map.getCanvas().setAttribute("aria-label", isWelshPage ? "Map o'r ardal wasanaeth" : "Map of my service area");
 
   map.on("load", () => {
     fetch("/maps/service-areas.geojson")
@@ -57,7 +59,6 @@ export function initMap() {
       })
       .catch(err => console.error("Error loading GeoJSON:", err));
 
-    const isWelshPage = window.location.pathname.includes("/cy/");
     const towns = [
       { nameEn: "Aberdaron", nameCy: "Aberdaron", coords: [-4.7101, 52.8046] },
       { nameEn: "Abergele", nameCy: "Abergele", coords: [-3.5822, 53.2844] },
@@ -100,6 +101,7 @@ export function initMap() {
 
       const dot = document.createElement("div");
       dot.className = "town-dot-only";
+      dot.setAttribute("aria-hidden", "true");
 
       new mapboxgl.Marker({
         element: dot,
@@ -111,6 +113,7 @@ export function initMap() {
       const label = document.createElement("div");
       label.className = "town-label";
       label.textContent = langLabel;
+      label.setAttribute("aria-hidden", "true");
 
       new mapboxgl.Marker({
         element: label,
