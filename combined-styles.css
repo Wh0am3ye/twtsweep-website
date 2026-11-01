@@ -915,6 +915,8 @@ footer {
 }
 
 .carousel-dot.active {
+  width: 38px;
+  border-radius: 50%;
   background: var(--accent);
   transform: scale(1.2);
 }
