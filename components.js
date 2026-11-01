@@ -80,6 +80,11 @@ function updateLangButton() {
   const shortLabel = isEnglish ? "CY" : "EN";
 
   langBtn.innerHTML = `${iconMarkup}<span class="lang-btn-label lang-btn-label--long">${longLabel}</span><span class="lang-btn-label lang-btn-label--short">${shortLabel}</span>`;
+  langBtn.removeAttribute("lang");
+  const targetLang = isEnglish ? "cy" : "en-GB";
+  langBtn.querySelectorAll(".lang-btn-label--long, .lang-btn-label--short").forEach(label => {
+    label.setAttribute("lang", targetLang);
+  });
   langBtn.setAttribute("aria-label", isEnglish ? "Switch to Welsh" : "Newid i'r Saesneg");
   langBtn.setAttribute("title", isEnglish ? "Switch to Welsh" : "Newid i'r Saesneg");
 }
