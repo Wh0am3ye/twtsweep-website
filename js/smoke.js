@@ -1,4 +1,6 @@
 export function initSmoke() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
   const canvas = document.getElementById("smoke");
   if (!canvas) return;
 
