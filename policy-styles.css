@@ -141,7 +141,89 @@ main ul {
 }
 
 main li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+main li > ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.policy-details {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.policy-details > div {
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--accent-2);
+  background: rgb(35 32 33 / 4%);
+}
+
+.policy-details dt {
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.policy-details dd {
+  line-height: 1.6;
+}
+
+.policy-attributes {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.policy-attributes > div {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.35fr) 1fr;
+  gap: 0.25rem 1rem;
+}
+
+.policy-attributes dt {
+  margin: 0;
+}
+
+.table-wrap {
+  max-width: 100%;
+  margin: 1rem 0 1.5rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 1.5;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid rgb(35 32 33 / 20%);
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .policy-attributes > div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  table {
+    min-width: 42rem;
+  }
 }
 
 nav ul {
