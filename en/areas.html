@@ -32,8 +32,6 @@
 
   <link rel="stylesheet" href="/combined-styles.css">
   <script src="/config.js"></script>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.23.1/mapbox-gl.css" rel="stylesheet" />
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.23.1/mapbox-gl.js"></script>
 
   <link rel="canonical" href="https://www.twtsweep.co.uk/en/areas.html" />
   <link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/areas.html" />
@@ -152,13 +150,27 @@
     <p>If you are just outside of the marked areas or your town isn't listed, please <a href="contact.html" class="text-link">get in touch</a> to see if I can help.</p>
   </section>
 
-    <section class="container service-area">
-        <div id="map"></div>
+    <section class="container service-area" aria-label="Service area map">
+      <div class="map-gate" data-embed-gate="map"
+        data-loading-message="Loading the map."
+        data-loaded-message="Map loaded."
+        data-error-message="The map could not be loaded. The service-area list remains available below.">
+        <div id="map" aria-hidden="true" tabindex="-1"></div>
+        <div class="embed-gate map-gate__placeholder" data-gate-placeholder>
+          <h2>Load the service-area map</h2>
+          <p>Mapbox may set cookies and share your IP address with Mapbox when the map loads.</p>
+          <p><a class="text-link" href="/cookie-policy.html">Read the cookie policy</a></p>
+          <button class="btn embed-gate__button" type="button" data-gate-load>Load map</button>
+          <p class="embed-gate__error" data-gate-error hidden>The map could not be loaded. <a class="text-link" href="#town-list">See the towns and villages we serve.</a></p>
+        </div>
+      </div>
+      <p class="visually-hidden" data-gate-status aria-live="polite"></p>
+      <noscript><p>JavaScript is off, so the map cannot load. <a class="text-link" href="#town-list">See the towns and villages we serve.</a></p></noscript>
     </section>
 
     <section class="container">
       <div id="town-list" class="town-list">
-        <!-- Static fallback, replaced by js/map.js on load. Keep in sync with the towns array. -->
+        <!-- Static fallback, replaced when the map loads. Keep in sync with the towns array. -->
         <h2>Towns and villages</h2>
         <ul class="town-list__items">
           <li>Aberdaron</li>

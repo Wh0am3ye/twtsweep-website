@@ -33,8 +33,6 @@
   <link rel="stylesheet" href="/combined-styles.css">
 
   <script src="/config.js"></script>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.23.1/mapbox-gl.css" rel="stylesheet" />
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.23.1/mapbox-gl.js"></script>
 
   <link rel="canonical" href="https://www.twtsweep.co.uk/cy/ardaloedd.html" />
   <link rel="alternate" hreflang="en" href="https://www.twtsweep.co.uk/en/areas.html" />
@@ -152,13 +150,27 @@
   <p>Os ydach chi ychydig y tu allan i'r ardaloedd sydd wedi'u nodi neu os nad yw eich tref ar y rhestr, <a href="cysylltu.html" class="text-link">cysylltwch â mi</a> i weld os alla i helpu.</p>
   </section>
 
-    <section class="container service-area">
-        <div id="map"></div>
+    <section class="container service-area" aria-label="Map ardal wasanaeth">
+      <div class="map-gate" data-embed-gate="map"
+        data-loading-message="Yn llwytho'r map."
+        data-loaded-message="Map wedi llwytho."
+        data-error-message="Doedd dim modd llwytho'r map. Mae rhestr yr ardaloedd yn dal ar gael isod.">
+        <div id="map" aria-hidden="true" tabindex="-1"></div>
+        <div class="embed-gate map-gate__placeholder" data-gate-placeholder>
+          <h2>Llwytho'r map ardal wasanaeth</h2>
+          <p>Mae'n bosib y bydd Mapbox yn gosod cwcis ac yn rhannu dy gyfeiriad IP efo Mapbox pan lwythir y map.</p>
+          <p><a class="text-link" href="/cookie-policy.html">Darllen y polisi cwcis</a></p>
+          <button class="btn embed-gate__button" type="button" data-gate-load>Llwytho'r map</button>
+          <p class="embed-gate__error" data-gate-error hidden>Doedd dim modd llwytho'r map. <a class="text-link" href="#town-list">Gweld y trefi a'r pentrefi rydw i'n eu gwasanaethu.</a></p>
+        </div>
+      </div>
+      <p class="visually-hidden" data-gate-status aria-live="polite"></p>
+      <noscript><p>Mae JavaScript wedi'i ddiffodd, felly all y map ddim llwytho. <a class="text-link" href="#town-list">Gweld y trefi a'r pentrefi rydw i'n eu gwasanaethu.</a></p></noscript>
     </section>
 
     <section class="container">
       <div id="town-list" class="town-list">
-        <!-- Static fallback, replaced by js/map.js on load. Keep in sync with the towns array. -->
+        <!-- Static fallback, replaced when the map loads. Keep in sync with the towns array. -->
         <h2>Trefi a phentrefi</h2>
         <ul class="town-list__items">
           <li>Aberdaron</li>

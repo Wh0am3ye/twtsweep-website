@@ -146,7 +146,21 @@
     <p>Use the booking portal on this page to select your preferred date and time.<br>No upfront payment is required - you only pay after the service.</p>
   </section>
   <section id="setmore-booking" class="container vert-container">
-      <iframe id="booking-frame" src="https://twtsweep.setmore.com/book" title="Book an appointment with TWTSweep via Setmore" width="100%" height="600" style="border: none; border-radius: 12px;"></iframe>
+    <div class="embed-gate booking-gate" data-embed-gate="booking"
+      data-src="https://twtsweep.setmore.com/book"
+      data-title="Book an appointment with TWTSweep via Setmore"
+      data-loading-message="Loading the booking form."
+      data-loaded-message="Booking form loaded.">
+      <div class="booking-gate__placeholder" data-gate-placeholder>
+        <h2>Book online with Setmore</h2>
+        <p>The Setmore booking form may set cookies and share your IP address with Setmore.</p>
+        <p><a class="text-link" href="/cookie-policy.html">Read the cookie policy</a></p>
+        <button class="btn embed-gate__button" type="button" data-gate-load>Load booking form</button>
+      </div>
+    </div>
+    <p class="visually-hidden" data-gate-status aria-live="polite"></p>
+    <p class="booking-direct-link">Or <a class="text-link" href="https://twtsweep.setmore.com/book" target="_blank" rel="noopener noreferrer">book directly on Setmore</a></p>
+    <noscript><p>JavaScript is off. <a class="text-link" href="https://twtsweep.setmore.com/book" target="_blank" rel="noopener noreferrer">Book directly on Setmore</a>.</p></noscript>
   </section>
 </main>
 
@@ -183,34 +197,6 @@
     <p>© TWTSweep</p>
   </div>
 </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // 1. Grab the parameter from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const serviceId = urlParams.get('service');
-    
-    console.log("Detected Service Parameter:", serviceId);
-
-    // 2. Find the iframe
-    const iframe = document.getElementById('booking-frame');
-    
-    if (!iframe) {
-      console.error("Error: Could not find an iframe with id='booking-frame'");
-      return;
-    }
-
-    // 3. Update the source if the parameter exists
-    if (serviceId) {
-      // NOTE: Adjust this string format to match your exact Setmore EasyShare URL pattern
-      const newSource = `https://twtsweep.setmore.com/services/${serviceId}`;
-      
-      console.log("Updating iframe source to:", newSource);
-      iframe.src = newSource;
-    } else {
-      console.log("No service parameter found in URL. Loading default booking page.");
-    }
-  });
-</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "acadf7260a5549109bdbb7de5650ff2a"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
