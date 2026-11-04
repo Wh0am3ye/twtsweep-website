@@ -37,6 +37,31 @@ function loadComponents() {
 
   updateLangButton();
   setActiveNavLink();
+  addEmbedChoiceResetLink();
+}
+
+function addEmbedChoiceResetLink() {
+  const footerContent = document.querySelector(".footer-content");
+  if (!footerContent || footerContent.querySelector(".embed-choice-reset")) return;
+
+  const isWelshPage = window.location.pathname.includes("/cy/");
+  const paragraph = document.createElement("p");
+  paragraph.className = "embed-choice-reset";
+  const link = document.createElement("a");
+  link.href = "#";
+  link.textContent = isWelshPage ? "Ailosod dewisiadau'r map a bwcio" : "Reset embed choices";
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    try {
+      sessionStorage.removeItem("twt-embed-map");
+      sessionStorage.removeItem("twt-embed-booking");
+    } catch {
+      // Reload still returns to the placeholders when storage is unavailable.
+    }
+    window.location.reload();
+  });
+  paragraph.append(link);
+  footerContent.append(paragraph);
 }
 
 window.addEventListener("resize", updateLangButton);

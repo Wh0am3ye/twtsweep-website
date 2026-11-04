@@ -1,4 +1,8 @@
-const PERSIST_EMBED_CHOICES = false;
+const REMEMBER_CHOICE = true;
+const EMBED_STORAGE_KEYS = {
+  map: "twt-embed-map",
+  booking: "twt-embed-booking"
+};
 const MAPBOX_VERSION = "v3.23.1";
 const MAPBOX_CSS = `https://api.mapbox.com/mapbox-gl-js/${MAPBOX_VERSION}/mapbox-gl.css`;
 const MAPBOX_JS = `https://api.mapbox.com/mapbox-gl-js/${MAPBOX_VERSION}/mapbox-gl.js`;
@@ -47,38 +51,57 @@ function statusRegion(gate) {
   return gate.closest("section")?.querySelector("[data-gate-status]");
 }
 
-function storeChoice(gate) {
-  if (PERSIST_EMBED_CHOICES) {
-    sessionStorage.setItem(`embed-${gate.dataset.embedGate}`, "loaded");
+function readChoice(gate) {
+  if (!REMEMBER_CHOICE) return false;
+
+  try {
+    return sessionStorage.getItem(EMBED_STORAGE_KEYS[gate.dataset.embedGate]) === "1";
+  } catch {
+    return false;
   }
 }
 
-async function loadMap(gate, button) {
+function rememberChoice(gate) {
+  if (!REMEMBER_CHOICE) return;
+
+  try {
+    sessionStorage.setItem(EMBED_STORAGE_KEYS[gate.dataset.embedGate], "1");
+  } catch {
+    // Storage may be disabled; this page can still load the requested embed.
+  }
+}
+
+async function loadMap(gate, button, fromClick) {
   const status = statusRegion(gate);
   const mapElement = gate.querySelector("#map");
-  button.disabled = true;
-  status.textContent = gate.dataset.loadingMessage;
+  const placeholder = gate.querySelector("[data-gate-placeholder]");
+  if (!fromClick) placeholder.hidden = true;
+  if (fromClick) {
+    button.disabled = true;
+    status.textContent = gate.dataset.loadingMessage;
+  }
 
   try {
     await loadMapboxAssets();
     const { initMap } = await import("./map.js");
     const map = await initMap();
     gate.classList.add("is-loaded");
-    gate.querySelector("[data-gate-placeholder]").hidden = true;
     mapElement.setAttribute("aria-hidden", "false");
     map.resize();
-    status.textContent = gate.dataset.loadedMessage;
-    mapElement.focus({ preventScroll: true });
-    storeChoice(gate);
+    if (fromClick) {
+      status.textContent = gate.dataset.loadedMessage;
+      mapElement.focus({ preventScroll: true });
+    }
   } catch (error) {
     console.error("Error loading the service-area map:", error);
+    placeholder.hidden = false;
     gate.querySelector("[data-gate-error]").hidden = false;
-    status.textContent = gate.dataset.errorMessage;
+    if (fromClick) status.textContent = gate.dataset.errorMessage;
     button.disabled = false;
   }
 }
 
-function loadBooking(gate) {
+function loadBooking(gate, fromClick) {
   const placeholder = gate.querySelector("[data-gate-placeholder]");
   const iframe = document.createElement("iframe");
   const bookingUrl = new URL(gate.dataset.src, window.location.href);
@@ -93,13 +116,14 @@ function loadBooking(gate) {
   iframe.height = "600";
   iframe.className = "booking-frame";
   const status = statusRegion(gate);
-  status.textContent = gate.dataset.loadingMessage;
-  iframe.addEventListener("load", () => {
-    status.textContent = gate.dataset.loadedMessage;
-    iframe.focus({ preventScroll: true });
-  }, { once: true });
+  if (fromClick) {
+    status.textContent = gate.dataset.loadingMessage;
+    iframe.addEventListener("load", () => {
+      status.textContent = gate.dataset.loadedMessage;
+      iframe.focus({ preventScroll: true });
+    }, { once: true });
+  }
   placeholder.replaceWith(iframe);
-  storeChoice(gate);
 }
 
 export function initEmbedGates() {
@@ -107,18 +131,19 @@ export function initEmbedGates() {
     const button = gate.querySelector("[data-gate-load]");
     if (!button) return;
 
-    const activate = () => {
+    const activate = fromClick => {
       if (gate.dataset.embedGate === "map") {
-        loadMap(gate, button);
+        loadMap(gate, button, fromClick);
       } else if (gate.dataset.embedGate === "booking") {
-        loadBooking(gate);
+        loadBooking(gate, fromClick);
       }
     };
 
-    button.addEventListener("click", activate);
+    button.addEventListener("click", () => {
+      rememberChoice(gate);
+      activate(true);
+    });
 
-    if (PERSIST_EMBED_CHOICES && sessionStorage.getItem(`embed-${gate.dataset.embedGate}`) === "loaded") {
-      activate();
-    }
+    if (readChoice(gate)) activate(false);
   });
 }

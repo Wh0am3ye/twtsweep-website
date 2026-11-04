@@ -217,6 +217,19 @@ footer {
   margin: 0;
 }
 
+.embed-choice-reset a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.embed-choice-reset a:hover {
+  color: var(--accent);
+}
+
 .social-links {
   display: flex;
   gap: var(--spacing);
