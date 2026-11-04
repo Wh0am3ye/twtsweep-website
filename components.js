@@ -49,7 +49,7 @@ function addEmbedChoiceResetLink() {
   paragraph.className = "embed-choice-reset";
   const link = document.createElement("a");
   link.href = "#";
-  link.textContent = isWelshPage ? "Ailosod dewisiadau'r map a bwcio" : "Reset embed choices";
+  link.textContent = isWelshPage ? "Ailosod dewisiadau embed" : "Reset embed choices";
   link.addEventListener("click", event => {
     event.preventDefault();
     try {
