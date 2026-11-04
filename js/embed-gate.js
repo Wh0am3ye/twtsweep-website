@@ -85,6 +85,7 @@ async function loadMap(gate, button, fromClick) {
     await loadMapboxAssets();
     const { initMap } = await import("./map.js");
     const map = await initMap();
+    placeholder.hidden = true;
     gate.classList.add("is-loaded");
     mapElement.setAttribute("aria-hidden", "false");
     map.resize();
