@@ -116,8 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
     import("./carousel.js").then(m => m.initCarousel());
   }
 
-  if (document.getElementById("map")) {
-    import("./map.js").then(m => m.initMap());
+  if (document.querySelector("[data-embed-gate]")) {
+    import("./embed-gate.js").then(m => m.initEmbedGates());
   }
 
   if (document.getElementById("smoke")) {
