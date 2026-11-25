@@ -317,6 +317,10 @@ nav ul,
   border-bottom: none;
 }
 
+.container.areas-intro {
+  border-bottom: 4px solid var(--accent-3);
+}
+
 .icon {
   width: 80%;
   height: auto;
@@ -1119,6 +1123,19 @@ footer {
   text-align: center;
 }
 
+img.service-area-map {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  height: 50vh;
+  object-fit: scale-down;
+  border-radius: var(--radius-sym);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  padding: var(--spacing) 0;
+}
+
 #map {
   min-height: 400px;
   height: 50vh;
@@ -1139,6 +1156,23 @@ footer {
   font-size: 12px;
   font-weight: 500;
   white-space: nowrap;
+}
+
+@media (min-width: 901px) {
+  .areas-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .areas-columns > .container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 /* =========================

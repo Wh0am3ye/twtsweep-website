@@ -145,48 +145,36 @@
       <h1>Local Service Area</h1>
   </section>
 
-  <section class="container">
+  <section class="container areas-intro">
     <p>My service area covers most of North Wales, including the counties of Gwynedd, Conwy and Anglesey. From Abergele to Aberdaron, Benllech to Betws-y-Coed and Holyhead to Harlech, and everywhere in between. The map below shows the areas I cover, and a list of towns served follows.</p>
     <p>If you are just outside of the marked areas or your town isn't listed, please <a href="contact.html" class="text-link">get in touch</a> to see if I can help.</p>
   </section>
 
-    <section class="container service-area" aria-label="Service area map">
-      <div class="map-gate" data-embed-gate="map"
-        data-loading-message="Loading the map."
-        data-loaded-message="Map loaded."
-        data-error-message="The map could not be loaded. The service area list remains available below.">
-        <div id="map" aria-hidden="true" tabindex="-1"></div>
-        <div class="embed-gate map-gate__placeholder" data-gate-placeholder>
-          <h2>Load the service area map</h2>
-          <p>This map is provided by Mapbox. Loading it shares your IP address and anonymous usage data with Mapbox and stores some data in your browser.</p>
-          <p><a class="text-link" href="/cookie-policy.html">Read the cookie policy</a></p>
-          <button class="btn embed-gate__button" type="button" data-gate-load>Load map</button>
-          <p class="embed-gate__error" data-gate-error hidden>The map could not be loaded. <a class="text-link" href="#town-list">See the towns and villages I serve.</a></p>
-        </div>
-      </div>
-      <p class="visually-hidden" data-gate-status aria-live="polite"></p>
-      <noscript><p>JavaScript is off, so the map cannot load. <a class="text-link" href="#town-list">See the towns and villages I serve.</a></p></noscript>
-    </section>
+    <div class="areas-columns">
+      <section class="container service-area" aria-label="Service area map">
+        <img src="/maps/service-area-map.webp" alt="Map showing TWTSweep's service area across Gwynedd, Conwy and Anglesey in North Wales" class="service-area-map" width="1200" height="800" loading="lazy" decoding="async">
+      </section>
 
-    <section class="container">
-      <div id="town-list" class="town-list">
-        <!-- Static fallback, replaced when the map loads. Keep in sync with the towns array. -->
-        <h2>Towns and villages</h2>
-        <ul class="town-list__items">
-          <li>Aberdaron</li>
-          <li>Abergele</li>
-          <li>Amlwch</li>
-          <li>Betws-y-Coed</li>
-          <li>Criccieth</li>
-          <li>Harlech</li>
-          <li>Holyhead</li>
-          <li>Llandudno</li>
-          <li>Menai Bridge</li>
-          <li>Penygroes</li>
-          <li>Pwllheli</li>
-        </ul>
-      </div>
-    </section>
+      <section class="container">
+        <div id="town-list" class="town-list">
+          <!-- Static fallback, replaced when the map loads. Keep in sync with the towns array. -->
+          <h2>Towns and villages</h2>
+          <ul class="town-list__items">
+            <li>Aberdaron</li>
+            <li>Abergele</li>
+            <li>Amlwch</li>
+            <li>Betws-y-Coed</li>
+            <li>Criccieth</li>
+            <li>Harlech</li>
+            <li>Holyhead</li>
+            <li>Llandudno</li>
+            <li>Menai Bridge</li>
+            <li>Penygroes</li>
+            <li>Pwllheli</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 </main>
 
 
