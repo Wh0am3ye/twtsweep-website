@@ -1,1 +1,0 @@
-window.MAPBOX_TOKEN = "pk.eyJ1Ijoid2gwYW0zeWUiLCJhIjoiY21uc3lzOWJnMDV6ajJwc2htMGR1YnplYSJ9.-yWj88IGqwBCQqQlFI_6cA";
